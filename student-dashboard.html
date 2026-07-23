@@ -3,9 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students dashboard</title>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="assets/css/student-dashboard.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
+    <div class="dashboard-container">
+       
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h2>Master Class</h2>
+            </div>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="active"><a href="#"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fa-solid fa-book"></i> Courses</a></li>
+                    <li><a href="#"><i class="fa-solid fa-calendar-days"></i> Schedule</a></li>
+                    <li><a href="#"><i class="fa-solid fa-square-poll-horizontal"></i> Grades</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-logout">
+                <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="main-header">
+                <div class="welcome-msg">
+                    <h1>Welcome back, Alex!</h1>
+                    <p>Here's what's happening with your studies today.</p>
+                </div>
+                <div class="user-profile">
+                    <i class="fa-solid fa-bell notification-icon"></i>
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60" alt="Student Profile Picture" class="avatar">
+                </div>
+            </header>
+
+            <!-- Overview Cards -->
+            <section class="overview-cards">
+                <div class="card">
+                    <div class="card-icon blue"><i class="fa-solid fa-book-open"></i></div>
+                    <div class="card-info">
+                        <h3>4</h3>
+                        <p>Enrolled Courses</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon green"><i class="fa-solid fa-clock"></i></div>
+                    <div class="card-info">
+                        <h3>12h</h3>
+                        <p>Study Hours This Week</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon orange"><i class="fa-solid fa-star"></i></div>
+                    <div class="card-info">
+                        <h3>3.8</h3>
+                        <p>Current GPA</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Upcoming Assignments -->
+                <div class="grid-card assignments-panel">
+                    <h2>Upcoming Assignments</h2>
+                    <ul class="assignment-list">
+                        <li class="assignment-item urgent">
+                            <div class="details">
+                                <h4>Advanced Calculus - Problem Set 4</h4>
+                                <p>Due: Today, 11:59 PM</p>
+                            </div>
+                            <span class="status-badge high">High Priority</span>
+                        </li>
+                        <li class="assignment-item">
+                            <div class="details">
+                                <h4>Intro to Computer Science - Lab 3</h4>
+                                <p>Due: Oct 26, 2026</p>
+                            </div>
+                            <span class="status-badge medium">Medium</span>
+                        </li>
+                        <li class="assignment-item">
+                            <div class="details">
+                                <h4>English Literature - Essay Draft</h4>
+                                <p>Due: Oct 29, 2026</p>
+                            </div>
+                            <span class="status-badge low">Low</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Course Progress -->
+                <div class="grid-card progress-panel">
+                    <h2>Course Progress</h2>
+                    <div class="progress-item">
+                        <div class="progress-info">
+                            <span>Data Structures</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress fill-1"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-info">
+                            <span>Linear Algebra</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress fill-2"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-info">
+                            <span>Physics: Mechanics</span>
+                            <span>45%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress fill-3"></div></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

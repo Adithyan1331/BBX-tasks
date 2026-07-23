@@ -1,5 +1,213 @@
-*{
+/* Base Reset and Typography */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Navbar Styles */
+.navbar {
+    background-color: #1a365d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    color: #ff6b6b;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.signup-btn {
+    background-color: #fcc419;
+    color: #1a365d;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.signup-btn:hover {
+    background-color: #fab005;
+}
+
+/* Dashboard Content Grid Layout */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 25px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    align-self: start;
+    min-height: 550px;
+}
+
+.sidebar h3 {
+    color: #1e3a8a;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: block;
+    transition: color 0.2s;
+}
+
+.sidebar ul li a:hover {
+    color: #1e3a8a;
+}
+
+/* Main Content Area & Cards */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.hero-banner {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.hero-banner h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.card h2 {
+    color: #1e3a8a;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+/* Specific Component Typography */
+.text-card p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.list-card ul {
+    padding-left: 20px;
+    color: #4a5568;
+}
+
+.list-card ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Articles Section Styling */
+.articles-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.article-item {
+    background-color: #edf2ff;
+    border-left: 4px solid #3b82f6;
+    padding: 15px 20px;
+    border-radius: 0 6px 6px 0;
+}
+
+.article-item h3 {
+    color: #1e3a8a;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+.article-item p {
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1a365d;
+    color: #e2e8f0;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+/* Responsive adjustment for tablet/mobile viewports */
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        min-height: auto;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }

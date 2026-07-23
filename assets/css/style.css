@@ -1,0 +1,204 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+}
+
+/* Navigation */
+
+nav{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:absolute;
+    z-index:10;
+}
+
+.logo{
+    color:#fff;
+    font-size:32px;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:35px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ffd54f;
+}
+
+
+
+.hero{
+    height:90vh;
+
+    background:
+    linear-gradient(rgba(0,45,98,.55),rgba(0,45,98,.55)),
+    url("");
+
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding-left:8%;
+}
+
+.content{
+    width:600px;
+    color:white;
+}
+
+.content h1{
+    font-size:65px;
+    line-height:75px;
+    margin-bottom:20px;
+}
+
+.content p{
+    font-size:18px;
+    line-height:32px;
+    margin-bottom:35px;
+}
+
+.button{
+
+    display:inline-block;
+    padding:16px 35px;
+    background:#fff;
+    color:#0066ff;
+    text-decoration:none;
+    border-radius:40px;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.button:hover{
+
+    background:#ffcc00;
+    color:#222;
+}
+
+/* Services */
+
+.services{
+
+    width:85%;
+    margin:-80px auto 60px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+    position:relative;
+    z-index:5;
+}
+
+.card{
+
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+}
+
+.icon{
+
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h3{
+
+    color:#003366;
+    margin-bottom:10px;
+}
+
+.card p{
+
+    color:#666;
+    line-height:25px;
+}
+
+/* Footer */
+
+footer{
+
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+nav{
+
+    flex-direction:column;
+    position:relative;
+    background:#003366;
+}
+
+nav ul{
+
+    margin-top:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav ul li{
+
+    margin:10px;
+}
+
+.hero{
+
+    height:70vh;
+    padding:40px;
+    text-align:center;
+    justify-content:center;
+}
+
+.content{
+
+    width:100%;
+}
+
+.content h1{
+
+    font-size:45px;
+    line-height:55px;
+}
+
+.services{
+
+    margin-top:30px;
+}
+}

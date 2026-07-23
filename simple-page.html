@@ -3,10 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple page</title>
+    <title>Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>BBX</h1>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🎲</span> BlackBox
+        </div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+        <button class="signup-btn">Signup</button>
+    </header>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Hero Banner -->
+            <section class="hero-banner">
+                <h1>Welcome to the Learning Hub!</h1>
+            </section>
+
+            <!-- About Us Section -->
+            <section class="card text-card">
+                <h2>About Us</h2>
+                <p>We provide high-quality, interactive learning experiences to help you master new skills and advance your career.</p>
+            </section>
+
+            <!-- Our Services Section -->
+            <section class="card list-card">
+                <h2>Our Services</h2>
+                <ul>
+                    <li>Live Classes</li>
+                    <li>Recorded Sessions</li>
+                    <li>Assignments & Projects</li>
+                    <li>Certification</li>
+                </ul>
+            </section>
+
+            <!-- Latest Articles Section -->
+            <section class="card articles-card">
+                <h2>Latest Articles</h2>
+                
+                <article class="article-item">
+                    <h3>How to Learn Effectively</h3>
+                    <p>Discover strategies to boost your learning efficiency and retention.</p>
+                </article>
+
+                <article class="article-item">
+                    <h3>Top 5 Tech Skills in 2026</h3>
+                    <p>Stay ahead with the most in-demand technology skills for the future.</p>
+                </article>
+            </section>
+            
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Learning Hub. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

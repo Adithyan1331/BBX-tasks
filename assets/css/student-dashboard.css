@@ -1,5 +1,273 @@
-*{
+/* Base Reset and Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background-color: #1e293b;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.sidebar-brand i {
+    color: #38bdf8;
+    font-size: 2rem;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-menu a, .sidebar-logout a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li.active a, .sidebar-menu a:hover {
+    background-color: #334155;
+    color: #fff;
+}
+
+.sidebar-logout a:hover {
+    background-color: #ef4444;
+    color: #fff;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    padding: 2rem 3rem;
+    overflow-y: auto;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.welcome-msg h1 {
+    font-size: 1.75rem;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+}
+
+.welcome-msg p {
+    color: #64748b;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.notification-icon {
+    font-size: 1.25rem;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #38bdf8;
+}
+
+/* Overview Cards */
+.overview-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.card-icon.blue { background-color: #e0f2fe; color: #0284c7; }
+.card-icon.green { background-color: #dcfce7; color: #16a34a; }
+.card-icon.orange { background-color: #ffedd5; color: #ea580c; }
+
+.card-info h3 {
+    font-size: 1.5rem;
+    color: #0f172a;
+}
+
+.card-info p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+}
+
+.grid-card {
+    background-color: #fff;
+    padding: 1.75rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.grid-card h2 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+}
+
+/* Assignments List */
+.assignment-list {
+    list-style: none;
+}
+
+.assignment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    background-color: #f8fafc;
+    border-left: 4px solid #cbd5e1;
+}
+
+.assignment-item.urgent {
+    border-left-color: #ef4444;
+}
+
+.assignment-item h4 {
+    font-size: 0.95rem;
+    color: #334155;
+    margin-bottom: 0.25rem;
+}
+
+.assignment-item p {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+.status-badge.high { background-color: #fee2e2; color: #ef4444; }
+.status-badge.medium { background-color: #fef9c3; color: #ca8a04; }
+.status-badge.low { background-color: #e2e8f0; color: #475569; }
+
+/* Progress Bars */
+.progress-item {
+    margin-bottom: 1.25rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #475569;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.fill-1 { width: 80%; background-color: #3b82f6; }
+.fill-2 { width: 65%; background-color: #10b981; }
+.fill-3 { width: 45%; background-color: #f59e0b; }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 1rem;
+    }
+    .sidebar-brand {
+        margin-bottom: 1rem;
+    }
+    .main-content {
+        padding: 1.5rem;
+    }
 }
