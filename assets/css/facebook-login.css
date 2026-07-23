@@ -1,5 +1,166 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#ffffff;
+}
+
+/* Main Layout */
+
+.container{
+    display:flex;
+    width:100%;
+    height:100vh;
+}
+
+/* Left */
+
+.left-section{
+    width:58%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-right:1px solid #d8d8d8;
+    background:#fff;
+}
+
+.left-image{
+    width:90%;
+    max-width:700px;
+}
+
+/* Right */
+
+.right-section{
+    width:42%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#fff;
+}
+
+.login-box{
+    width:360px;
+}
+
+.login-box h2{
+    font-size:22px;
+    font-weight:500;
+    color:#1c1e21;
+    margin-bottom:25px;
+}
+
+/* Input */
+
+.login-box input{
+    width:100%;
+    height:46px;
+    border:1px solid #dcdcdc;
+    border-radius:10px;
+    margin-bottom:15px;
+    padding-left:15px;
+    font-size:14px;
+    outline:none;
+    transition:.3s;
+}
+
+.login-box input:focus{
+    border:1px solid #1877f2;
+    box-shadow:0 0 5px rgba(24,119,242,.3);
+}
+
+/* Login Button */
+
+.login-btn{
+    width:100%;
+    height:42px;
+    border:none;
+    border-radius:30px;
+    background:#1877f2;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#1669d8;
+}
+
+/* Forgot */
+
+.forgot{
+    display:block;
+    text-align:center;
+    margin:20px 0;
+    text-decoration:none;
+    color:#555;
+    font-size:13px;
+}
+
+.forgot:hover{
+    text-decoration:underline;
+}
+
+/* Create */
+
+.create-btn{
+    width:100%;
+    height:42px;
+    border-radius:30px;
+    border:1px solid #1877f2;
+    background:white;
+    color:#1877f2;
+    font-weight:500;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.create-btn:hover{
+    background:#f5f9ff;
+}
+
+/* Meta */
+
+.meta{
+    text-align:center;
+    margin-top:35px;
+}
+
+.meta img{
+    width:65px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.container{
+    flex-direction:column;
+}
+
+.left-section{
+    width:100%;
+    height:45vh;
+    border-right:none;
+    border-bottom:1px solid #ddd;
+}
+
+.right-section{
+    width:100%;
+    height:55vh;
+}
+
+.left-image{
+    width:95%;
+}
+
+.login-box{
+    width:90%;
+}
+
 }
