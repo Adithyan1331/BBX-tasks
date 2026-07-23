@@ -1,76 +1,103 @@
-*{
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+}
+
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
-}
-
-.task-box-container{
-
-    border: 5px solid rgb(218, 12, 12);
-    padding: 12px;
-    margin: 12px;
-    background-color: bisque;
-    border-radius: 13px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.task-box{
-    border: 5px solid rgb(201, 23, 23);
-    padding: 30px;
-    margin: 8px;
-    background-color: rgb(247, 251, 250);
-    border-radius: 15px;
-    text-align: center;
-     display: flex;
-     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 290px;
-
-
-
-}
-
-.task-heading{
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 100;
-    font-size: larger;
-    font-style: var();
-    color: brown;
-    text-align: center;
-}
-
-
-.description{
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
-    font-weight: 100;
-    font-style: inherit;
-    font-variant: small-caps;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* --- Header Layout --- */
+header {
+    background-color: var(--card-bg);
+    padding: 2rem;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 2.5rem;
 }
 
-.view-button{
-    border: solid red;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 23px;
-    width: 45%;
-    text-decoration: none;
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
 
+/* --- Container & Grid System --- */
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem 1.5rem;
+}
+
+.task-box-container {
+    display: grid;
+    /* Automatically creates columns based on screen width */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* --- Individual Task Cards --- */
+.task-box {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     
+    /* Flexbox keeps the button pushed to the bottom */
+    display: flex;
+    flex-direction: column;
 }
 
-@media(max-width:768px){
-
+.task-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }
-    
 
-.view-button a{
+.task-heading {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.description {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Ensures descriptions take up available space */
+}
+
+/* --- Buttons --- */
+.view-button {
+    margin-top: auto;
+}
+
+.view-button a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
     text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.view-button a:hover {
+    background-color: var(--primary-hover);
 }
