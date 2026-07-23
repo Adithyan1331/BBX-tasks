@@ -1,0 +1,383 @@
+/* ================= GLOBAL STYLES ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #4338ca;   /* Deep Indigo */
+    --secondary-color: #1e1b4b; /* Dark Navy */
+    --accent-color: #38bdf8;    /* Light Blue */
+    --bg-light: #f8fafc;
+    --text-dark: #334155;
+    --text-light: #94a3b8;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+header {
+    background-color: var(--white);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 5%;
+    max-width: 1400px;
+    margin: auto;
+    min-height: 80vh;
+    gap: 4rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.buttons .btn1, .buttons .btn2, .cta .btn1 {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn1 {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(67, 56, 202, 0.4);
+}
+
+.btn1:hover {
+    background-color: #3730a3;
+    transform: translateY(-2px);
+}
+
+.btn2 {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    margin-left: 1rem;
+}
+
+.btn2:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* ================= FEATURES ================= */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding: 4rem 5%;
+    background-color: var(--white);
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.02);
+}
+
+.feature h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.feature p {
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* ================= COURSES ================= */
+.courses {
+    padding: 6rem 5%;
+    max-width: 1400px;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+}
+
+.course-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body h3 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.card-body p {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.card-body button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card-body button:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* ================= STATS ================= */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 5rem 5%;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    gap: 2rem;
+}
+
+.stat h2 {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* ================= REVIEWS ================= */
+.reviews {
+    padding: 6rem 5%;
+    background-color: var(--bg-light);
+    text-align: center;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.review-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.review p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.review h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ================= CALL TO ACTION (CTA) ================= */
+.cta {
+    padding: 6rem 5%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 5%;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ================= MEDIA QUERIES (RESPONSIVENESS) ================= */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 3rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text p {
+        margin: 0 auto 2rem auto;
+    }
+    
+    .nav-links {
+        display: none; /* Hide standard links on mobile to keep it simple, ideally replaced by a hamburger menu in future iterations */
+    }
+
+    .features {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .btn2 {
+        margin-left: 0;
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .btn1 {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .stat h2 {
+        font-size: 2.5rem;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+    }
+}
