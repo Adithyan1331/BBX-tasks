@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Student Information Program</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            margin:20px;
+        }
+
+        h1{
+            text-align:center;
+            color:#0d6efd;
+        }
+
+        #output{
+            background:#fff;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+            line-height:1.8;
+        }
+
+        h2{
+            color:#198754;
+        }
+
+        hr{
+            margin:15px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Student Information System</h1>
+
+<div id="output"></div>
+
+<script>
+
+let studentName = "Adithyan";
+let age = 20;
+let course = "JavaScript";
+let totalMarks = 420;
+let attendancePercentage = 88;
+let isFeePaid = true;
+let phoneNumber = 9876543210;
+let address = null;
+let email;
+let bonusMarks = 15;
+let attemptCount = 1;
+
+const output = document.getElementById("output");
+
+// Function to print on webpage
+function print(text){
+    output.innerHTML += text + "<br>";
+}
+
+// Function to print on webpage and console
+function show(label, value){
+    console.log(label + " :", value);
+    print("<b>" + label + "</b> : " + value);
+}
+
+print("<h2>1. Variables and Data Types</h2>");
+
+show("Student Name", studentName);
+show("Data Type", typeof studentName);
+print("<hr>");
+
+show("Age", age);
+show("Data Type", typeof age);
+print("<hr>");
+
+show("Course", course);
+show("Data Type", typeof course);
+print("<hr>");
+
+show("Total Marks", totalMarks);
+show("Data Type", typeof totalMarks);
+print("<hr>");
+
+show("Attendance Percentage", attendancePercentage);
+show("Data Type", typeof attendancePercentage);
+print("<hr>");
+
+show("Fee Paid", isFeePaid);
+show("Data Type", typeof isFeePaid);
+print("<hr>");
+
+show("Phone Number", phoneNumber);
+show("Data Type", typeof phoneNumber);
+print("<hr>");
+
+show("Address", address);
+show("Data Type", typeof address);
+print("<hr>");
+
+show("Email", email);
+show("Data Type", typeof email);
+print("<hr>");
+
+show("Bonus Marks", bonusMarks);
+show("Data Type", typeof bonusMarks);
+print("<hr>");
+
+show("Attempt Count", attemptCount);
+show("Data Type", typeof attemptCount);
+
+print("<hr>");
+
+print("<h2>2. Calculations</h2>");
+
+totalMarks = totalMarks + bonusMarks;
+show("Updated Total Marks", totalMarks);
+
+let averageMarks = totalMarks / 5;
+show("Average Marks", averageMarks);
+
+let remainder = totalMarks % 5;
+show("Remainder when Total Marks is divided by 5", remainder);
+
+let ageSquare = age ** 2;
+show("Square of Age", ageSquare);
+
+print("<hr>");
+
+
+print("<h2>3. Assignment Operators</h2>");
+
+totalMarks += 20;
+show("Total Marks after +=20", totalMarks);
+
+attendancePercentage -= 5;
+show("Attendance Percentage after -=5", attendancePercentage);
+
+bonusMarks *= 2;
+show("Bonus Marks after *=2", bonusMarks);
+
+totalMarks /= 2;
+show("Total Marks after /=2", totalMarks);
+
+totalMarks %= 7;
+show("Total Marks after %=7", totalMarks);
+
+print("<hr>");
+
+print("<h2>4. Comparison Operators</h2>");
+
+show("Age >= 18", age >= 18);
+
+show("Total Marks > 250", totalMarks > 250);
+
+show("Attendance Percentage < 75", attendancePercentage < 75);
+
+show('Course == "JavaScript"', course == "JavaScript");
+
+show('Course === "JavaScript"', course === "JavaScript");
+
+show('Student Name != "Admin"', studentName != "Admin");
+
+show('Student Name !== "Admin"', studentName !== "Admin");
+
+show("Age < 25", age < 25);
+
+show("Attendance Percentage <= 100", attendancePercentage <= 100);
+
+print("<hr>");
+
+print("<h2>5. Logical Operators</h2>");
+
+let examEligible = attendancePercentage >= 75 && isFeePaid;
+show("Eligible for Exam", examEligible);
+
+let certificateEligible = totalMarks >= 250 || attendancePercentage >= 90;
+show("Eligible for Certificate", certificateEligible);
+
+show("Opposite of Fee Paid", !isFeePaid);
+
+print("<hr>");
+
+print("<h2>6. Increment and Decrement</h2>");
+
+attemptCount++;
+show("Attempt Count after ++", attemptCount);
+
+attemptCount--;
+show("Attempt Count after --", attemptCount);
+
+print("<hr>");
+
+print("<h2>7. Ternary Operator</h2>");
+
+let result = (averageMarks >= 50) ? "Pass" : "Fail";
+show("Result", result);
+
+let category = (age >= 18) ? "Adult" : "Minor";
+show("Category", category);
+
+print("<hr>");
+
+
+print("<h2>8. Final Output</h2>");
+
+show("Student Name", studentName);
+show("Age", age);
+show("Course", course);
+show("Total Marks", totalMarks);
+show("Average Marks", averageMarks);
+show("Attendance Percentage", attendancePercentage);
+show("Fee Paid", isFeePaid);
+show("Phone Number", phoneNumber);
+show("Address", address);
+show("Email", email);
+show("Bonus Marks", bonusMarks);
+show("Attempt Count", attemptCount);
+show("Exam Eligible", examEligible);
+show("Certificate Eligible", certificateEligible);
+show("Result", result);
+show("Category", category);
+
+</script>
+
+</body>
+</html>
