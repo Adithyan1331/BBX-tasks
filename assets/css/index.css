@@ -1,103 +1,277 @@
-/* --- Global Styles & Variables --- */
-:root {
-    --primary-color: #4f46e5;
-    --primary-hover: #4338ca;
-    --bg-color: #f3f4f6;
-    --card-bg: #ffffff;
-    --text-main: #1f2937;
-    --text-muted: #6b7280;
+index css
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body{
+
+    background:#0f0f0f;
+
+    color:#fff;
+
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    line-height: 1.6;
+/*================ HERO ================*/
+
+.hero{
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    background:linear-gradient(135deg,#111,#1c1c1c);
+
+    border-bottom:3px solid #ff7300;
+
 }
 
-/* --- Header Layout --- */
-header {
-    background-color: var(--card-bg);
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    margin-bottom: 2.5rem;
+.hero h1{
+
+    font-size:70px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
 }
 
-header h1 {
-    color: var(--primary-color);
-    font-size: 2.2rem;
-    letter-spacing: 1px;
+.hero span{
+
+    color:#ff7300;
+
 }
 
-/* --- Container & Grid System --- */
-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem 4rem 1.5rem;
+.hero p{
+
+    margin-top:20px;
+
+    color:#bdbdbd;
+
+    font-size:18px;
+
 }
 
-.task-box-container {
-    display: grid;
-    /* Automatically creates columns based on screen width */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+/*================ MAIN ================*/
+
+main{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:60px 0;
+
 }
 
-/* --- Individual Task Cards --- */
-.task-box {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    /* Flexbox keeps the button pushed to the bottom */
-    display: flex;
-    flex-direction: column;
+section{
+
+    margin-bottom:80px;
+
 }
 
-.task-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+section h2{
+
+    color:#ff7300;
+
+    margin-bottom:35px;
+
+    font-size:34px;
+
+    border-left:6px solid #ff7300;
+
+    padding-left:18px;
+
 }
 
-.task-heading {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-main);
+section h2 i{
+
+    margin-right:10px;
+
 }
 
-.description {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    flex-grow: 1; /* Ensures descriptions take up available space */
+/*================ GRID ================*/
+
+.task-box-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
 }
 
-/* --- Buttons --- */
-.view-button {
-    margin-top: auto;
+/*================ CARD ================*/
+
+.task-box{
+
+    background:#1b1b1b;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    border:2px solid rgba(255,115,0,.25);
+
+    transition:.35s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.4);
+
+    position:relative;
+
+    overflow:hidden;
+
 }
 
-.view-button a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+.task-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:160px;
+
+    height:160px;
+
+    background:#ff7300;
+
+    opacity:.08;
+
+    border-radius:50%;
+
+    top:-80px;
+
+    right:-80px;
+
 }
 
-.view-button a:hover {
-    background-color: var(--primary-hover);
+.task-box:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#ff7300;
+
+    box-shadow:0 15px 40px rgba(255,115,0,.35);
+
+}
+
+.task-box h3{
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+}
+
+.task-box p{
+
+    color:#bdbdbd;
+
+    line-height:1.7;
+
+    min-height:80px;
+
+}
+
+/*================ BUTTON ================*/
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:12px 28px;
+
+    background:#ff7300;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#fff;
+
+    color:#111;
+
+}
+
+/*================ SCROLLBAR ================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff7300;
+
+    border-radius:20px;
+
+}
+
+/*================ RESPONSIVE ================*/
+
+@media(max-width:900px){
+
+.hero h1{
+
+    font-size:50px;
+
+}
+
+section h2{
+
+    font-size:28px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+    font-size:38px;
+
+}
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+main{
+
+    width:95%;
+
+}
+
 }

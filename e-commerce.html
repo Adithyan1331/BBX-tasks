@@ -1,314 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>ShopkArt | E-Commerce</title>
 
-    <link rel="stylesheet" href="assets/css/e-commerce.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="assets/css/e-commerce.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
+
+<!-- ======================================
+            HEADER
+======================================= -->
 
 <header>
 
     <div class="logo">
+
         <i class="fa-solid fa-cart-shopping"></i>
-        ShopkArt
+
+        <span>ShopkArt</span>
+
     </div>
 
     <nav>
+
         <a href="#">Home</a>
-        <a href="#">Products</a>
+
+        <a href="#products">Products</a>
+
         <a href="#">Categories</a>
+
         <a href="#">Offers</a>
+
         <a href="#">Contact</a>
+
     </nav>
 
     <div class="search-box">
-        <input type="text" placeholder="Search products...">
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+
+        <input type="text"
+               placeholder="Search products...">
+
+        <button>
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </button>
+
     </div>
 
 </header>
 
-
+<!-- ======================================
+            HERO SECTION
+======================================= -->
 
 <section class="hero">
 
     <div class="hero-text">
-        <h1>Aadi sale</h1>
+
+        <h1>Aadi Sale</h1>
+
         <h3>ഇപ്പോൾ വാങ്ങിയാൽ ഇരട്ടി വാങ്ങാം</h3>
-        <p>Up to <span>50% OFF</span> on all products.</p>
 
-        <a href="#products" class="shop-btn">
+        <p>
+            Up to
+            <span>50% OFF</span>
+            on selected products.
+        </p>
+
+        <a href="#products"
+           class="shop-btn">
+
             Shop Now
+
         </a>
+
     </div>
 
 </section>
 
+<!-- ======================================
+          FEATURED PRODUCTS
+======================================= -->
 
-<section class="products" id="products">
+<section class="products"
+         id="products">
 
-    <h2>Featured Products</h2>
+<h2>Featured Products</h2>
 
-    <div class="product-container">
+<div class="product-container">
+        <!-- ==========================
+            PRODUCT 1
+    =========================== -->
 
-        <!-- Product 1 -->
+    <div class="card">
 
-        <div class="card">
+        <span class="sale">SALE</span>
 
-            <span class="sale">SALE</span>
+        <img src="assets/images/nike air e-com.avif"
+             alt="Nike Air Max"
+             loading="lazy">
 
-            <img src="assets/images/nike air e-com.avif">
+        <div class="content">
 
-            <div class="content">
+            <h3>Nike Air Max</h3>
 
-                <h3>Nike Air Max</h3>
+            <p>
+                Lightweight running shoes with superior comfort,
+                breathable mesh design and all-day cushioning.
+            </p>
 
-                <p>Comfortable running shoes.</p>
+            <div class="rating">
 
-                <div class="rating">
-                    ★★★★★
-                </div>
-
-                <div class="price">
-                    <span class="new-price">₹4,999</span>
-                    <span class="old-price">₹6,999</span>
-                </div>
-
-                <div class="buttons">
-                    <button class="cart-btn">Add to Cart</button>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <span class="sale">SALE</span>
-
-            <img src="assets/images/boat wireless e-com.webp" alt="Headphone">
-
-            <div class="content">
-
-                <h3>Boat Nirvana ANC</h3>
-
-                <p>Noise cancelling headphones.</p>
-
-                <div class="rating">
-                    ★★★★☆
-                </div>
-
-                <div class="price">
-                    <span class="new-price">₹2,499</span>
-                    <span class="old-price">₹3,499</span>
-                </div>
-
-                <div class="buttons">
-                    <button class="cart-btn">Add to Cart</button>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
+                ★★★★★
 
             </div>
 
-        </div>
+            <div class="price">
 
+                <span class="new-price">
+                    ₹4,999
+                </span>
 
-
-        <div class="card">
-
-            <span class="sale">SALE</span>
-
-            <img src="assets/images/boat-watch-flash-smart-watch-e-commerce.webp" alt="Watch">
-
-            <div class="content">
-
-                <h3>Boat fit</h3>
-
-                <p>Fitness and health tracking Watch.</p>
-
-                <div class="rating">
-                    ★★★★★
-                </div>
-
-                <div class="price">
-                    <span class="new-price">₹3,999</span>
-                    <span class="old-price">₹5,299</span>
-                </div>
-
-                <div class="buttons">
-                    <button class="cart-btn">Add to Cart</button>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
+                <span class="old-price">
+                    ₹6,999
+                </span>
 
             </div>
 
-        </div>
+            <div class="buttons">
 
+                <button class="cart-btn">
 
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
 
-        <div class="card">
+                </button>
 
-            <span class="sale">SALE</span>
+                <button class="buy-btn">
 
-            <img src="assets/images/laptop e-commerce.webp" alt="Laptop">
+                    Buy Now
 
-            <div class="content">
-
-                <h3>Lenovo LOQ 15</h3>
-
-                <p>Powerful laptop for work & gaming.</p>
-
-                <div class="rating">
-                    ★★★★★
-                </div>
-
-                <div class="price">
-                    <span class="new-price">₹99,999</span>
-                    <span class="old-price">₹01,10,999</span>
-                </div>
-
-                <div class="buttons">
-                    <button class="cart-btn">Add to Cart</button>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <span class="sale">SALE</span>
-
-            <img src="assets/images/Motorola-edge-70-fusion e-commerce web.avif" alt="Phone">
-
-            <div class="content">
-
-                <h3>Motorola Edge 70 Fusion</h3>
-
-                <p>snapdragon 7s Gen4.</p>
-
-                <div class="rating">
-                    ★★★★☆
-                </div>
-
-                <div class="price">
-                    <span class="new-price">₹29,999</span>
-                    <span class="old-price">₹35,999</span>
-                </div>
-
-                <div class="buttons">
-                    <button class="cart-btn">Add to Cart</button>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <span class="sale">SALE</span>
-
-            <img src="assets/images/camera e-com.jpg" alt="Camera">
-
-            <div class="content">
-
-                <h3>DSLR Camera</h3>
-
-                <p>Professional photography camera.</p>
-
-                <div class="rating">
-                    ★★★★★
-                </div>
-
-                <div class="price">
-                    <span class="new-price">₹59,999</span>
-                    <span class="old-price">₹74,999</span>
-                </div>
-
-                <div class="buttons">
-                    <button class="cart-btn">Add to Cart</button>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
+                </button>
 
             </div>
 
         </div>
 
     </div>
-<BR>
-</BR>
 
 
+    <!-- ==========================
+            PRODUCT 2
+    =========================== -->
 
-    <div class="card1">
+    <div class="card">
 
-            <span class="sale">SALE</span>
+        <span class="sale">SALE</span>
 
-            <img src="assets/images/rado watch e-comerce.jpg" alt="watch">
+        <img src="assets/images/boat wireless e-com.webp"
+             alt="Boat Nirvana ANC"
+             loading="lazy">
 
-            <div class="content">
+        <div class="content">
 
-                <h3>Rado Diastar Automatic Watch - Gold Dial & Full Gold Metal Chain</h3>
+            <h3>Boat Nirvana ANC</h3>
 
-                <p>/luxury watch for men.</p>
+            <p>
+                Premium wireless headphones featuring Active Noise
+                Cancellation and immersive surround sound.
+            </p>
 
-                <div class="rating">
-                    ★★★★☆
-                </div>
+            <div class="rating">
 
-                <div class="price">
-                    <span class="new-price">₹25,999</span>
-                    <span class="old-price">₹35,999</span>
-                </div>
+                ★★★★☆
 
-                <div class="buttons">
-                    <button class="cart-btn">Add to Cart</button>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
+            </div>
 
-                </div>
+            <div class="price">
+
+                <span class="new-price">
+                    ₹2,499
+                </span>
+
+                <span class="old-price">
+                    ₹3,499
+                </span>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="cart-btn">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+
+                </button>
+
+                <button class="buy-btn">
+
+                    Buy Now
+
+                </button>
 
             </div>
 
         </div>
 
+    </div>
+        <!-- ==========================
+            PRODUCT 3
+    =========================== -->
+
+    <div class="card">
+
+        <span class="sale">SALE</span>
+
+        <img src="assets/images/boat-watch-flash-smart-watch-e-commerce.webp"
+             alt="Boat Fit Smart Watch"
+             loading="lazy">
+
+        <div class="content">
+
+            <h3>Boat Fit Smart Watch</h3>
+
+            <p>
+                Stylish fitness smartwatch with heart-rate monitoring,
+                sleep tracking, and multiple sports modes.
+            </p>
+
+            <div class="rating">
+
+                ★★★★★
+
+            </div>
+
+            <div class="price">
+
+                <span class="new-price">
+                    ₹3,999
+                </span>
+
+                <span class="old-price">
+                    ₹5,299
+                </span>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="cart-btn">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+
+                </button>
+
+                <button class="buy-btn">
+
+                    Buy Now
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================
+            PRODUCT 4
+    =========================== -->
+
+    <div class="card">
+
+        <span class="sale">SALE</span>
+
+        <img src="assets/images/laptop e-commerce.webp"
+             alt="Lenovo LOQ 15 Laptop"
+             loading="lazy">
+
+        <div class="content">
+
+            <h3>Lenovo LOQ 15</h3>
+
+            <p>
+                High-performance gaming laptop powered for work,
+                content creation, and modern gaming.
+            </p>
+
+            <div class="rating">
+
+                ★★★★★
+
+            </div>
+
+            <div class="price">
+
+                <span class="new-price">
+                    ₹99,999
+                </span>
+
+                <span class="old-price">
+                    ₹1,10,999
+                </span>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="cart-btn">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+
+                </button>
+
+                <button class="buy-btn">
+
+                    Buy Now
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+        <!-- ==========================
+            PRODUCT 5
+    =========================== -->
+
+    <div class="card">
+
+        <span class="sale">SALE</span>
+
+        <img src="assets/images/mobile e-commerce.webp"
+             alt="Motorola Edge 70 Fusion"
+             loading="lazy">
+
+        <div class="content">
+
+            <h3>Motorola Edge 70 Fusion</h3>
+
+            <p>
+                Powered by Snapdragon 7s Gen 4 with a smooth display,
+                premium design, and all-day battery life.
+            </p>
+
+            <div class="rating">
+
+                ★★★★☆
+
+            </div>
+
+            <div class="price">
+
+                <span class="new-price">
+                    ₹29,999
+                </span>
+
+                <span class="old-price">
+                    ₹35,999
+                </span>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                </button>
+
+                <button class="buy-btn">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================
+            PRODUCT 6
+    =========================== -->
+
+    <div class="card">
+
+        <span class="sale">SALE</span>
+
+        <img src="assets/images/camera e-com.jpg"
+             alt="Professional DSLR Camera"
+             loading="lazy">
+
+        <div class="content">
+
+            <h3>Professional DSLR Camera</h3>
+
+            <p>
+                Capture stunning photos and cinematic videos with a
+                high-resolution sensor and professional features.
+            </p>
+
+            <div class="rating">
+
+                ★★★★★
+
+            </div>
+
+            <div class="price">
+
+                <span class="new-price">
+                    ₹59,999
+                </span>
+
+                <span class="old-price">
+                    ₹74,999
+                </span>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                </button>
+
+                <button class="buy-btn">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+        <!-- ==========================
+            PRODUCT 7
+    =========================== -->
+
+    <div class="card">
+
+        <span class="sale">SALE</span>
+
+        <img src="assets/images/rado watch e-comerce.jpg"
+             alt="Rado Diastar Automatic Watch"
+             loading="lazy">
+
+        <div class="content">
+
+            <h3>Rado Diastar Automatic Watch</h3>
+
+            <p>
+                Premium luxury watch featuring a gold dial,
+                full metal gold chain, and elegant craftsmanship.
+            </p>
+
+            <div class="rating">
+
+                ★★★★★
+
+            </div>
+
+            <div class="price">
+
+                <span class="new-price">
+                    ₹25,999
+                </span>
+
+                <span class="old-price">
+                    ₹35,999
+                </span>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                </button>
+
+                <button class="buy-btn">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </section>
 
+<!-- ==========================
+          FOOTER
+========================== -->
 
 <footer>
 
     <h3>ShopkArt</h3>
 
-    <p>Your One-Stop Online Shopping Destination</p>
+    <p>
+        Your One-Stop Online Shopping Destination
+    </p>
 
     <div class="social">
 
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-linkedin"></i>
+        <a href="#" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#" aria-label="Twitter">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+
+        <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
 
     </div>
 
-    <p>© 2026 ShopkArt. All Rights Reserved.</p>
+    <p>
+        © 2026 ShopkArt. All Rights Reserved.
+    </p>
 
 </footer>
 
+</body>
+
+</html>
 </body>
 </html>
