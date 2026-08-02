@@ -9,19 +9,41 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <div class="container">
 
-    <!-- Left Side -->
+    <!-- LEFT SECTION -->
 
     <div class="left-section">
 
-        <img src="assets/images/FB login image.webp" class="left-image" alt="Facebook">
+        <!-- Facebook Logo -->
+
+        <img src="assets/images/FB logo.webp"
+             alt="Facebook Logo"
+             class="facebook-logo">
+
+        <!-- Illustration -->
+
+        <img src="assets/images/FB login image.webp"
+             alt="Facebook Illustration"
+             class="left-image">
+
+        <!-- Heading -->
+
+        <div class="heading">
+
+            <h1>Explore</h1>
+            <h1>the</h1>
+            <h1>things</h1>
+            <h1 style="color: blue;">you love.</h1>
+
+        </div>
 
     </div>
 
-    <!-- Right Side -->
+    <!-- RIGHT SECTION -->
 
     <div class="right-section">
 
@@ -29,19 +51,19 @@
 
             <h2>Log in to Facebook</h2>
 
-            <form>
+            <form id="loginForm">
 
                 <input
-                type="text"
-                placeholder="Email address or mobile number"
-                required>
+                    type="text"
+                    placeholder="Email address or mobile number"
+                    required>
 
                 <input
-                type="password"
-                placeholder="Password"
-                required>
+                    type="password"
+                    placeholder="Password"
+                    required>
 
-                <button class="login-btn">
+                <button type="submit" class="login-btn">
                     Log in
                 </button>
 
@@ -49,14 +71,20 @@
                     Forgotten password?
                 </a>
 
-                <button class="create-btn">
+                <button type="button" class="create-btn">
                     Create new account
                 </button>
 
             </form>
 
             <div class="meta">
-                <img src="assets/images/meta logo.jpg" <alt></alt>Meta</alt>
+
+                <img src="assets/images/meta logo.jpg"
+                     alt="Meta Logo"
+                     class="meta-logo">
+
+                <span>Meta</span>
+
             </div>
 
         </div>
@@ -64,6 +92,8 @@
     </div>
 
 </div>
+
+<script src="assets/js/facebook-login.js"></script>
 
 </body>
 </html>
