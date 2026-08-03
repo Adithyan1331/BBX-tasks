@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Directory Management System</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef2f7;
+    padding:40px;
+}
+
+.container{
+    width:900px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,.2);
+}
+
+h1{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:25px;
+}
+
+h2{
+    color:#1565c0;
+    margin-top:25px;
+    margin-bottom:10px;
+}
+
+.result{
+    background:#f5f5f5;
+    padding:15px;
+    border-radius:8px;
+    white-space:pre-wrap;
+    line-height:1.8;
+    border-left:5px solid #1565c0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Employee Directory Management System</h1>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+//======================================================
+// Requirement 1
+//======================================================
+
+let employees=[
+"Adithyan",
+"Rahul",
+"Anjali",
+"Sneha",
+"Vishnu"
+];
+
+let result="";
+
+result+="==============================\n";
+result+="Requirement 2\n";
+result+="==============================\n";
+
+result+="Total Employees : "+employees.length+"\n\n";
+
+result+="Employee List\n";
+
+employees.forEach(function(emp){
+    result+=emp+"\n";
+});
+
+//======================================================
+// Requirement 3
+//======================================================
+
+employees.push("Arjun");
+
+result+="\n\nAfter Adding Employee at End\n";
+result+=employees.join(", ");
+
+//======================================================
+// Requirement 4
+//======================================================
+
+employees.unshift("Meera");
+
+result+="\n\nAfter Adding Employee at Beginning\n";
+result+=employees.join(", ");
+
+//======================================================
+// Requirement 5
+//======================================================
+
+employees.pop();
+
+result+="\n\nAfter Removing Last Employee\n";
+result+=employees.join(", ");
+
+//======================================================
+// Requirement 6
+//======================================================
+
+employees.shift();
+
+result+="\n\nAfter Removing First Employee\n";
+result+=employees.join(", ");
+
+//======================================================
+// Requirement 7
+//======================================================
+
+let employeeToFind="Rahul";
+
+let index=employees.indexOf(employeeToFind);
+
+result+="\n\nIndex of "+employeeToFind+" : "+index;
+
+//======================================================
+// Requirement 8
+//======================================================
+
+let checkEmployee="Sneha";
+
+let exists=employees.includes(checkEmployee);
+
+result+="\n\nEmployee Exists ("+checkEmployee+") : "+exists;
+
+//======================================================
+// Requirement 9
+//======================================================
+
+let departments=[
+"HR",
+"Finance",
+"IT"
+];
+
+let combined=employees.concat(departments);
+
+result+="\n\nCombined Employee + Departments\n";
+
+result+=combined.join(", ");
+
+//======================================================
+// Requirement 10
+//======================================================
+
+result+="\n\nEmployees Separated by | \n";
+
+result+=employees.join(" | ");
+//======================================================
+// Requirement 11
+// Display employees from the 2nd to 4th position
+//======================================================
+
+result += "\n\n==============================\n";
+result += "Requirement 11\n";
+result += "==============================\n";
+
+let slicedEmployees = employees.slice(1, 4);
+
+result += "Employees (2nd to 4th Position):\n";
+result += slicedEmployees.join(", ");
+
+//======================================================
+// Requirement 12
+// Replace employee at 3rd position using splice()
+//======================================================
+
+result += "\n\n==============================\n";
+result += "Requirement 12\n";
+result += "==============================\n";
+
+employees.splice(2, 1, "Kiran");
+
+result += "After Replacing 3rd Employee:\n";
+result += employees.join(", ");
+
+//======================================================
+// Requirement 13
+// Sort Employees
+//======================================================
+
+result += "\n\n==============================\n";
+result += "Requirement 13\n";
+result += "==============================\n";
+
+employees.sort();
+
+result += "Sorted Employees:\n";
+result += employees.join(", ");
+
+//======================================================
+// Requirement 14
+// Reverse Employees
+//======================================================
+
+result += "\n\n==============================\n";
+result += "Requirement 14\n";
+result += "==============================\n";
+
+employees.reverse();
+
+result += "Reversed Employees:\n";
+result += employees.join(", ");
+
+//======================================================
+// Requirement 15
+// Employee Name with Extra Spaces
+//======================================================
+
+let employeeName = "   Adithyan V   ";
+
+result += "\n\n==============================\n";
+result += "Requirement 15\n";
+result += "==============================\n";
+
+result += "Original Name : [" + employeeName + "]";
+
+//======================================================
+// Requirement 16
+// String Operations
+//======================================================
+
+result += "\n\n==============================\n";
+result += "Requirement 16\n";
+result += "==============================\n";
+
+result += "\nTotal Characters : " + employeeName.length;
+
+result += "\nUppercase : " + employeeName.toUpperCase();
+
+result += "\nLowercase : " + employeeName.toLowerCase();
+
+result += "\nTrim : [" + employeeName.trim() + "]";
+
+result += "\nTrim Start : [" + employeeName.trimStart() + "]";
+
+result += "\nTrim End : [" + employeeName.trimEnd() + "]";
+
+result += "\nCharacter at Index 2 : " + employeeName.charAt(2);
+
+result += "\nLast Character : " + employeeName.trim().at(-1);
+
+result += "\nFirst Occurrence of 'a' : " + employeeName.toLowerCase().indexOf("a");
+
+result += "\nLast Occurrence of 'a' : " + employeeName.toLowerCase().lastIndexOf("a");
+
+result += "\nContains 'Adi' : " + employeeName.includes("Adi");
+
+result += "\nStarts With 'A' : " + employeeName.trim().startsWith("A");
+
+result += "\nEnds With 'V' : " + employeeName.trim().endsWith("V");
+
+result += "\nSlice(0,8) : " + employeeName.trim().slice(0,8);
+
+result += "\nSubstring(0,8) : " + employeeName.trim().substring(0,8);
+
+result += "\nReplace First Name : " +
+employeeName.trim().replace("Adithyan","Arjun");
+
+result += "\nReplace All 'a' with '@' : " +
+employeeName.replaceAll("a","@");
+
+result += "\nConcatenate : " +
+employeeName.trim().concat(" - ABC Company");
+
+result += "\nSplit : " +
+JSON.stringify(employeeName.trim().split(" "));
+
+result += "\nRepeat 3 Times :\n" +
+employeeName.trim().repeat(3);
+//======================================================
+// Requirement 17
+// Display All Results on the Web Page
+//======================================================
+
+document.getElementById("output").innerHTML = `
+    <h2>Employee Directory Management System</h2>
+
+    <div class="result">
+        ${result.replace(/\n/g, "<br>")}
+    </div>
+`;
+
+</script>
+
+</body>
+</html>

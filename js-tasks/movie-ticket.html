@@ -1,103 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎬 Online Movie Ticket Booking System</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Movie Ticket Booking System</title>
 
-    <!-- CSS File -->
-    <link rel="stylesheet" href="style.css">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    width:900px;
+    max-width:100%;
+    background:white;
+    color:#222;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#1d3557;
+}
+
+.output{
+    background:#f4f4f4;
+    border-left:6px solid #1d3557;
+    padding:20px;
+    border-radius:10px;
+    white-space:pre-line;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:#555;
+    font-size:15px;
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>🎬 Online Movie Ticket Booking System</h1>
-        <p>Book your favorite movie tickets quickly and easily.</p>
-    </header>
+<div class="container">
+<h1>🎬 Aries plus</h1>
 
-    <!-- Main Container -->
-    <main class="container">
+<div class="output" id="result">
+Waiting for booking...
+</div>
 
-        <!-- Booking Information -->
-        <section class="booking-card">
+<div class="footer">
+online booking platform of aries plus
+</div>
 
-            <h2>Booking Details</h2>
+</div>
 
-            <div id="output">
-                <p class="placeholder">
-                    Your booking details will appear here after completing the booking process.
-                </p>
-            </div>
+<script>
 
-        </section>
+//============================================
+// 1. Welcome Message
+//============================================
+alert("🎬 Welcome to Online Movie Ticket Booking System");
 
-        <!-- Ticket Status -->
-        <section class="booking-card">
+//============================================
+// 2. User Inputs
+//============================================
+let customerName = prompt("Enter Full Name");
 
-            <h2>🎟 Ticket Status</h2>
+let movieName = prompt("Enter Movie Name");
 
-            <div id="ticketStatus">
-                <p>No tickets generated.</p>
-            </div>
+alert("Each Ticket Costs ₹200");
 
-        </section>
+let ticketCount = prompt("Enter Number of Tickets");
 
-        <!-- Countdown -->
-        <section class="booking-card">
+let seatType = prompt("Choose Seat Type\nRegular\nPremium\nVIP");
 
-            <h2>⏳ Booking Countdown</h2>
+//============================================
+// 3. Booking Confirmation
+//============================================
+let confirmBooking = confirm("Do you want to proceed with booking?");
 
-            <div id="countdown">
-                <p>Waiting to start booking...</p>
-            </div>
+//============================================
+// 4. Convert Numeric Values
+//============================================
+let ticketPrice = Number(200);
 
-        </section>
+ticketCount = Number(ticketCount);
 
-        <!-- Ticket Preparation -->
-        <section class="booking-card">
+//============================================
+// 6. Conditions
+//============================================
 
-            <h2>🎫 Ticket Preparation</h2>
+if(!confirmBooking){
 
-            <div id="preparation">
-                <p>Preparing tickets...</p>
-            </div>
+    alert("Booking Cancelled");
 
-        </section>
+    document.getElementById("result").innerHTML="Booking Cancelled.";
 
-        <!-- Seat Layout -->
-        <section class="booking-card">
+}
+else if(ticketCount<1){
 
-            <h2>🪑 Seat Layout</h2>
+    alert("Invalid Number of Tickets");
 
-            <pre id="seatLayout">
-Seat layout will appear here.
-            </pre>
+    document.getElementById("result").innerHTML="Invalid Number of Tickets.";
 
-        </section>
+}
+else if(ticketCount>6){
 
-        <!-- Console Information -->
-        <section class="booking-card">
+    alert("Maximum 6 Tickets Allowed");
 
-            <h2>ℹ Console Output</h2>
+    document.getElementById("result").innerHTML="Maximum 6 Tickets Allowed.";
 
-            <p>
-                Open the browser Developer Tools (<strong>F12</strong>) and
-                click on the <strong>Console</strong> tab to view additional
-                booking information.
-            </p>
+}
+else{
 
-        </section>
+//============================================
+// 5. Calculations
+//============================================
 
-    </main>
+let totalCost=ticketCount*ticketPrice;
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Online Movie Ticket Booking System | JavaScript Assignment</p>
-    </footer>
+let discount=0;
 
-    <!-- JavaScript File -->
-    <script src="script.js"></script>
+if(ticketCount>3){
+
+    discount=totalCost*0.10;
+
+}
+
+let convenienceFee=50;
+
+let finalAmount=(totalCost-discount)+convenienceFee;
+
+let averageCost=finalAmount/ticketCount;
+
+let remainder=finalAmount%ticketCount;
+
+//============================================
+// 7. Booking Category
+//============================================
+
+let bookingCategory="";
+
+if(finalAmount>=2000){
+
+    bookingCategory="Premium Booking";
+
+}
+else if(finalAmount>=1000){
+
+    bookingCategory="Standard Booking";
+
+}
+else{
+
+    bookingCategory="Budget Booking";
+
+}
+
+//============================================
+// 8. Switch Statement
+//============================================
+
+let seatMessage="";
+
+switch(seatType.toLowerCase()){
+
+case "regular":
+seatMessage="Regular Seat Selected";
+break;
+
+case "premium":
+seatMessage="Premium Seat Selected";
+break;
+
+case "vip":
+seatMessage="VIP Seat Selected";
+break;
+
+default:
+seatMessage="Invalid Seat Type";
+
+}
+
+//============================================
+// 9. For Loop
+//============================================
+
+console.log("------ Ticket Ready ------");
+
+for(let i=1;i<=ticketCount;i++){
+
+if(i==5){
+
+break;
+
+}
+
+console.log("Ticket "+i+" Ready");
+
+}
+
+//============================================
+// 10. While Loop Countdown
+//============================================
+
+console.log("------ Countdown ------");
+
+let count=3;
+
+while(count>=1){
+
+console.log("Booking starts in "+count+"...");
+
+count--;
+
+}
+
+//============================================
+// 11. Do While Loop
+//============================================
+
+let prepare=1;
+
+do{
+
+console.log("Preparing Your Tickets...");
+
+prepare++;
+
+}while(prepare==1);
+
+//============================================
+// 12 & 13. Nested Loop + Continue
+//============================================
+
+console.log("------ Seat Layout ------");
+
+let layout="";
+
+for(let row=65;row<=67;row++){
+
+let seatRow="Row "+String.fromCharCode(row)+" : ";
+
+for(let seat=1;seat<=5;seat++){
+
+if(row==65 && seat==3){
+
+continue;
+
+}
+
+seatRow+=String.fromCharCode(row)+seat+" ";
+
+}
+
+console.log(seatRow);
+
+layout+=seatRow+"\n";
+
+}
+
+//============================================
+// 15. Template Literals
+//============================================
+
+let bookingDetails=`
+
+==============================
+MOVIE BOOKING DETAILS
+==============================
+
+Customer Name      : ${customerName}
+
+Movie Name         : ${movieName}
+
+Seat Type          : ${seatType}
+
+Number of Tickets  : ${ticketCount}
+
+Ticket Price       : ₹${ticketPrice}
+
+Total Ticket Cost  : ₹${totalCost}
+
+Discount Amount    : ₹${discount}
+
+Convenience Fee    : ₹${convenienceFee}
+
+Final Amount       : ₹${finalAmount}
+
+Average Cost       : ₹${averageCost.toFixed(2)}
+
+Remainder          : ${remainder}
+
+Booking Category   : ${bookingCategory}
+
+Booking Status     : Successful
+
+Confirmation Status: Confirmed
+
+Seat Message       : ${seatMessage}
+
+==============================
+
+Seat Layout
+
+${layout}
+
+`;
+
+console.log(bookingDetails);
+
+document.getElementById("result").innerHTML=bookingDetails;
+
+alert("🎉 Booking Successful!");
+
+}
+
+</script>
 
 </body>
 </html>

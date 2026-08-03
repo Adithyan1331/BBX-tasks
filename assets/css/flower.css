@@ -1,0 +1,564 @@
+/* ===============================
+   GOOGLE FONT
+================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===============================
+   ROOT VARIABLES
+================================= */
+:root{
+    --pink:#e84393;
+    --light-pink:#fff0f6;
+    --dark:#222;
+    --white:#fff;
+    --gray:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+/* ===============================
+   GLOBAL
+================================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration:none;
+    outline:none;
+    border:none;
+    transition:.3s ease;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    font-size:62.5%;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fdfdfd;
+    color:var(--dark);
+}
+
+section{
+    padding:8rem 9%;
+}
+
+/* ===============================
+   BUTTON
+================================= */
+.btn{
+    display:inline-block;
+    margin-top:2rem;
+    padding:1.2rem 3rem;
+    border-radius:5rem;
+    background:var(--dark);
+    color:#fff;
+    font-size:1.7rem;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:var(--pink);
+}
+
+/* ===============================
+   HEADING
+================================= */
+.heading{
+    text-align:center;
+    font-size:4rem;
+    margin-bottom:5rem;
+    color:#222;
+}
+
+.heading span{
+    color:var(--pink);
+}
+
+/* ===============================
+   HEADER
+================================= */
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:2rem 9%;
+    box-shadow:var(--shadow);
+    z-index:1000;
+}
+
+.logo{
+    font-size:3rem;
+    font-weight:700;
+    color:#222;
+}
+
+.logo i{
+    color:var(--pink);
+}
+
+.navbar a{
+    margin:0 1.5rem;
+    font-size:1.8rem;
+    color:#444;
+}
+
+.navbar a:hover{
+    color:var(--pink);
+}
+
+.icons i{
+    font-size:2.2rem;
+    margin-left:2rem;
+    cursor:pointer;
+    color:#333;
+}
+
+.icons i:hover{
+    color:var(--pink);
+}
+
+/* ===============================
+   HOME
+================================= */
+.home{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(255,255,255,.5),
+    rgba(255,255,255,.5)),
+    url("images/home.jpg") no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.content{
+    max-width:60rem;
+}
+
+.content h1{
+    font-size:6rem;
+    color:#222;
+}
+
+.content h3{
+    font-size:3.5rem;
+    color:var(--pink);
+    margin:1rem 0;
+}
+
+.content p{
+    font-size:1.8rem;
+    line-height:1.8;
+    color:#555;
+}
+
+/* ===============================
+   ABOUT
+================================= */
+.about-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(35rem,1fr));
+    gap:4rem;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:1rem;
+    box-shadow:var(--shadow);
+}
+
+.about .text h3{
+    font-size:3rem;
+    margin-bottom:2rem;
+}
+
+.about .text p{
+    font-size:1.7rem;
+    color:#666;
+    margin-bottom:2rem;
+    line-height:1.8;
+}
+
+/* ===============================
+   FEATURES
+================================= */
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(25rem,1fr));
+    gap:2rem;
+}
+
+.features .box{
+    background:#fff;
+    text-align:center;
+    padding:4rem 2rem;
+    box-shadow:var(--shadow);
+    border-radius:1rem;
+}
+
+.features .box:hover{
+    transform:translateY(-10px);
+}
+
+.features i{
+    font-size:5rem;
+    color:var(--pink);
+    margin-bottom:2rem;
+}
+
+.features h3{
+    font-size:2.3rem;
+    margin-bottom:1rem;
+}
+
+.features p{
+    font-size:1.6rem;
+    color:#666;
+}
+
+/* ===============================
+   PRODUCTS
+================================= */
+.product-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(28rem,1fr));
+    gap:3rem;
+}
+
+.product-card{
+    background:#fff;
+    box-shadow:var(--shadow);
+    border-radius:1rem;
+    overflow:hidden;
+    text-align:center;
+    position:relative;
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+}
+
+.discount{
+    position:absolute;
+    top:1.5rem;
+    left:1.5rem;
+    background:var(--pink);
+    color:#fff;
+    padding:.7rem 1.5rem;
+    border-radius:5rem;
+    font-size:1.4rem;
+}
+
+.product-card img{
+    width:100%;
+    height:30rem;
+    object-fit:cover;
+}
+
+.product-card h3{
+    font-size:2.5rem;
+    margin-top:2rem;
+}
+
+.product-card p{
+    color:#666;
+    font-size:1.6rem;
+    margin:.8rem 0;
+}
+
+.price{
+    font-size:2.5rem;
+    color:var(--pink);
+    margin:1rem 0;
+    font-weight:600;
+}
+
+.price span{
+    color:#888;
+    font-size:1.8rem;
+    text-decoration:line-through;
+}
+/* ===============================
+   REVIEWS
+================================= */
+.review-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(30rem,1fr));
+    gap:3rem;
+}
+
+.review-box{
+    background:#fff;
+    padding:3rem;
+    border-radius:1rem;
+    box-shadow:var(--shadow);
+    text-align:center;
+}
+
+.review-box:hover{
+    transform:translateY(-10px);
+}
+
+.review-box .stars{
+    margin-bottom:1.5rem;
+}
+
+.review-box .stars i{
+    color:#ffc107;
+    font-size:2rem;
+    margin:0 .2rem;
+}
+
+.review-box p{
+    font-size:1.6rem;
+    color:#666;
+    line-height:1.8;
+    margin-bottom:2rem;
+}
+
+.review-box h3{
+    font-size:2.2rem;
+    color:#222;
+}
+
+/* ===============================
+   CONTACT
+================================= */
+.contact{
+    background:#fff8fb;
+}
+
+.contact-container{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact form{
+    background:#fff;
+    padding:3rem;
+    border-radius:1rem;
+    box-shadow:var(--shadow);
+}
+
+.contact form input,
+.contact form textarea{
+    width:100%;
+    border:var(--border);
+    padding:1.5rem;
+    margin:1rem 0;
+    border-radius:.8rem;
+    font-size:1.6rem;
+    color:#333;
+    background:#fff;
+}
+
+.contact form textarea{
+    resize:none;
+}
+
+.contact form input:focus,
+.contact form textarea:focus{
+    border-color:var(--pink);
+}
+
+.contact .btn{
+    width:100%;
+    text-align:center;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+.footer{
+    background:#222;
+    color:#fff;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(25rem,1fr));
+    gap:3rem;
+    padding:5rem 9%;
+}
+
+.footer-box h3{
+    font-size:2.4rem;
+    margin-bottom:2rem;
+}
+
+.footer-box p{
+    font-size:1.5rem;
+    color:#ddd;
+    line-height:1.8;
+    margin-bottom:1rem;
+}
+
+.footer-box a{
+    display:block;
+    color:#ddd;
+    font-size:1.6rem;
+    margin:.8rem 0;
+}
+
+.footer-box a:hover{
+    color:var(--pink);
+    padding-left:.5rem;
+}
+
+/* ===============================
+   SCROLLBAR
+================================= */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--pink);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#d63384;
+}
+
+/* ===============================
+   SIMPLE ANIMATIONS
+================================= */
+@keyframes fadeUp{
+    0%{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.home .content,
+.about-container,
+.features .box,
+.product-card,
+.review-box,
+.contact form{
+    animation:fadeUp 1s ease;
+}
+
+/* ===============================
+   IMAGE EFFECTS
+================================= */
+.product-card img{
+    transition:.5s;
+}
+
+.product-card:hover img{
+    transform:scale(1.08);
+}
+
+.about img{
+    transition:.5s;
+}
+
+.about img:hover{
+    transform:scale(1.03);
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width:991px){
+
+    html{
+        font-size:55%;
+    }
+
+    .header{
+        padding:2rem 5%;
+    }
+
+    section{
+        padding:7rem 5%;
+    }
+
+    .content h1{
+        font-size:5rem;
+    }
+
+    .content h3{
+        font-size:3rem;
+    }
+}
+
+@media (max-width:768px){
+
+    .header{
+        flex-direction:column;
+        gap:2rem;
+    }
+
+    .navbar{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:1rem;
+    }
+
+    .navbar a{
+        margin:0;
+        font-size:1.7rem;
+    }
+
+    .icons{
+        margin-top:1rem;
+    }
+
+    .home{
+        text-align:center;
+        justify-content:center;
+    }
+
+    .content{
+        max-width:100%;
+    }
+
+    .heading{
+        font-size:3.4rem;
+    }
+}
+
+@media (max-width:576px){
+
+    html{
+        font-size:50%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+
+    .content h1{
+        font-size:4rem;
+    }
+
+    .content h3{
+        font-size:2.5rem;
+    }
+
+    .product-card img{
+        height:25rem;
+    }
+
+    .footer{
+        text-align:center;
+    }
+}
