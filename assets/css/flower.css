@@ -43,8 +43,7 @@ header .logo{
     font-weight: bolder;
 
 
-}
-
+   
 header .logo span{
     color: var(--pink);
 }
@@ -82,5 +81,21 @@ header .fa-bars{
     color: #333;
     border-radius: .5rem;
     padding: .5rem 1.5rem;
-    cursor:       ;
+    cursor: pointer;
+    border: 1rem solid rgba(0,0,0,0.3);
+    display: none;
+
 }
+
+
+
+
+
+
+
+
+
+
+/* media queries*/
+@media (max-width:991px)
+
