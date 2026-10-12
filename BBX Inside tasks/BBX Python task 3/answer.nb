@@ -1,0 +1,12 @@
+# Written explanation (100-150 words):
+# Python strings are immutable, meaning that once a string is created, itscharacters cannot be changed in place. An operation that seems to modify a
+# string creates a new string object instead. Immutability makes strings
+# predictable and safe to share, and it allows them to be used as dictionary
+# keys because their values cannot change after creation.
+#
+# Concatenating strings repeatedly inside a loop can be inefficient. Each
+# concatenation may create a new string and copy the existing characters into
+# it. As the string grows, repeated copying can take more time and memory, and
+# may lead to quadratic time complexity. A common efficient approach is to
+# collect pieces in a list and combine them once with " ".join(parts) or
+# "".join(parts), depending on whether separators are needed.
