@@ -1,6 +1,8 @@
 # Written explanation (100-150 words):
-# Python strings are immutable, meaning that once a string is created, itscharacters cannot be changed in place. An operation that seems to modify a
-# string creates a new string object instead. Immutability makes strings
+################################
+
+# 1. Python strings are immutable, meaning that once a string is created, itscharacters cannot be changed in place. An operation that seems to modify a
+# 2. string creates a new string object instead. Immutability makes strings
 # predictable and safe to share, and it allows them to be used as dictionary
 # keys because their values cannot change after creation.
 #
