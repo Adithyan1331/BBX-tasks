@@ -1,0 +1,100 @@
+
+import string
+
+
+def reverse_words(s):
+    """Return the words of a string in reverse order."""
+    return " ".join(s.split()[::-1])
+
+
+def is_palindrome(s):
+    """Check whether a string is a palindrome, ignoring case and punctuation."""
+    cleaned = "".join(
+        char.lower() for char in s
+        if char.isalnum()
+    )
+    return cleaned == cleaned[::-1]
+
+
+def char_frequency(s):
+    """Return character counts while ignoring spaces."""
+    frequency = {}
+
+    for char in s:
+        if not char.isspace():
+            frequency[char] = frequency.get(char, 0) + 1
+
+    return frequency
+
+
+def is_anagram(a, b):
+    """Check whether two strings are anagrams, ignoring case and spaces."""
+    first = sorted(a.replace(" ", "").lower())
+    second = sorted(b.replace(" ", "").lower())
+
+    return first == second
+
+
+def capitalise_names(s):
+    """Capitalize each name while preserving multiple spaces."""
+    return "".join(
+        word.capitalize() if word else ""
+        for word in s.split(" ")
+    )
+
+
+def truncate(s, n):
+    """Limit a string to n characters and append an ellipsis if cut."""
+    if len(s) <= n:
+        return s
+
+    if n <= 3:
+        return "." * n
+
+    return s[:n - 3] + "..."
+
+
+def count_vowels(s):
+    """Return the total number of vowels in a string."""
+    vowels = "aeiou"
+    return sum(1 for char in s.lower() if char in vowels)
+
+
+def longest_word(s):
+    """Return the longest word in a sentence."""
+    words = s.split()
+    return max(words, key=len, default="")
+
+
+if __name__ == "__main__":
+    print("1. Reverse words:",
+          reverse_words("the sky is blue"))
+
+    print("2. Is palindrome:",
+          is_palindrome("A man, a plan, a canal: Panama"))
+
+    print("3. Character frequency:",
+          char_frequency("hello world"))
+
+    print("4. Is anagram:",
+          is_anagram("Listen", "Silent"))
+
+    print("5. Capitalize names:",
+          repr(capitalise_names("john  smith")))
+
+    print("6. Truncate:",
+          truncate("Python programming", 10))
+
+    print("7. Count vowels:",
+          count_vowels("Hello Python"))
+
+    print("8. Longest word:",
+          longest_word("Python is easy to learn"))
+
+def capitalise_names(s):
+    """Capitalize each name while preserving multiple spaces."""
+    return " ".join(
+        word.capitalize() if word else ""
+        for word in s.split(" ")
+    )
+
