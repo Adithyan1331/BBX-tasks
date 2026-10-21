@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find your next unforgettable trip with Roam India.">
+    <title>Roam India | Travel Destination Explorer</title>
+    <link rel="stylesheet" href="travel.css">
+    <script src="travel.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="#home" aria-label="Roam India home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 25 16 16l5 5 4-4 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m25 9 1.7 4.3L31 15l-4.3 1.7L25 21l-1.7-4.3L19 15l4.3-1.7L25 9Z" fill="currentColor"/></svg><span class="logo-name"><span>Roam</span> India<span class="logo-dot">.</span></span></a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#top-rated">Top Rated</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-globe" aria-hidden="true">◎</span> THE TRAVEL ATLAS <span class="hero-edition">VOL. 01 — INDIA</span></p>
+                <h1 class="hero-title"><span class="hero-title-lead">TAKE THE</span><span class="hero-title-finish">scenic route.</span></h1>
+                <p>Less checklist. More feeling. Find a new point of view, then take the long way getting there.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#destinations">Open the atlas <span aria-hidden="true">↗</span></a>
+                    <a class="hero-secondary-link" href="#top-rated"><span class="play-icon">↓</span> Skip to the good bits</a>
+                </div>
+                <p class="date-line"><span class="date-label">Today in India</span><time id="page-date">loading date and time…</time></p>
+                <div class="hero-trip-details" aria-label="Travel highlights">
+                    <div><strong>12<span class="detail-plus"> / 12</span></strong><span>places to get lost</span></div>
+                    <div><strong>4.8 <span class="detail-star">★</span></strong><span>traveler love</span></div>
+                    <div><strong>₹₹</strong><span>easy-on-you escapes</span></div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img class="hero-image" src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&amp;fit=crop&amp;w=1500&amp;q=90" alt="Tropical beach and clear water in Goa">
+                <div class="hero-image-caption"><span class="caption-dot"></span><span><strong>Follow the coastline</strong><br>Salt air · Unhurried days</span></div>
+                <div class="hero-stamp" aria-hidden="true"><span>FIELD</span><strong>NOTES<br>NO. 01<br>INDIA</strong></div>
+                <div class="hero-image-index"><span>FIG. 01</span><span>THE OPEN ROAD</span></div>
+            </div>
+            <div class="hero-bottom-note"><span>01 / 12</span><span>Made for the curious</span><span>Scroll to explore ↓</span></div>
+        </section>
+
+        <section class="section top-rated-section" id="top-rated">
+            <div class="section-heading">
+                <div><p class="eyebrow">Loved by travelers</p><h2>Top rated escapes</h2></div>
+                <p>Four unforgettable favorites, chosen for the views, the feeling, and everything in between.</p>
+            </div>
+            <div class="top-rated-grid" id="top-rated-grid"></div>
+        </section>
+
+        <section class="section destinations-section" id="destinations">
+            <div class="section-heading">
+                <div><p class="eyebrow">Your next chapter</p><h2>Explore India</h2></div>
+                <p>Pick your pace, follow a feeling, and let the rest of the map unfold.</p>
+            </div>
+            <div class="browse-path" aria-label="Browse destinations by season">
+                <p class="browse-path-label"><span>01</span> Pick your kind of away</p>
+                <div class="mood-list">
+                    <button class="mood-chip is-active" type="button" data-season="all"><span class="mood-icon">✳</span><span><strong>Surprise me</strong><small>All of India</small></span><span class="mood-arrow">↗</span></button>
+                    <button class="mood-chip" type="button" data-season="summer"><span class="mood-icon">☼</span><span><strong>High &amp; cool</strong><small>Summer escapes</small></span><span class="mood-arrow">↗</span></button>
+                    <button class="mood-chip" type="button" data-season="winter"><span class="mood-icon">❄</span><span><strong>Golden days</strong><small>Winter sun</small></span><span class="mood-arrow">↗</span></button>
+                    <button class="mood-chip" type="button" data-season="monsoon"><span class="mood-icon">☂</span><span><strong>Go green</strong><small>Monsoon magic</small></span><span class="mood-arrow">↗</span></button>
+                    <button class="mood-chip" type="button" data-season="autumn"><span class="mood-icon">↟</span><span><strong>Slow season</strong><small>Autumn journeys</small></span><span class="mood-arrow">↗</span></button>
+                </div>
+            </div>
+            <div class="filters">
+                <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="destination-search" type="search" placeholder="Search destinations or countries…" aria-label="Search destinations"></label>
+                <label class="season-wrap"><span class="sr-only">Filter by season</span>
+                    <select id="season-filter">
+                        <option value="all">All seasons</option>
+                        <option value="summer">Summer</option>
+                        <option value="winter">Winter</option>
+                        <option value="monsoon">Monsoon</option>
+                        <option value="autumn">Autumn</option>
+                    </select>
+                </label>
+            </div>
+            <p class="results-count" id="results-count" aria-live="polite"></p>
+            <div class="destination-grid" id="destination-grid">
+                <article class="destination-card" id="ponmudi" data-top-rated="true" data-season="monsoon" data-person-cost="2200" data-couple-cost="4000" data-days="2" data-rating="4.9">
+                    <div class="card-image-wrap">
+                        <img class="destination-image" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Forest and green mountain scenery around Ponmudi" loading="lazy">
+                        <span class="image-rating">★ 4.9</span><span class="season-tag">Monsoon</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="country-line" data-country="India" data-location="Ponmudi, Thiruvananthapuram, Kerala">India <span>⌄</span></p>
+                        <h3>Ponmudi</h3><p class="card-blurb">A winding road into the clouds and Kerala's quiet green highlands.</p>
+                        <p class="route-line" data-route="TVM → Nedumangad → Vithura → Ponmudi">Hover me to know the route</p>
+                        <div class="card-meta"><span>From <strong>₹2,200</strong> / person</span><span>2 days minimum</span></div>
+                        <p class="couple-price">Couple package from ₹4,000</p>
+                        <ul class="attractions"><li>Golden Valley</li><li>Peppara Wildlife Sanctuary</li><li>Meenmutty Falls</li><li>Deer Park</li><li>Kallar River</li></ul>
+                        <div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div>
+                        <button class="button button-dark ready-button" type="button" id="ready-ponmudi">Ready to go <span>→</span></button>
+                    </div>
+                    <div class="destination-details" hidden><p>A refreshing hill escape known for its hairpin bends, misty viewpoints, and vivid green tea and spice country. Slow down, breathe in the mountain air, and explore the forest trails.</p><p class="best-time">October to March; monsoon brings dramatic green landscapes.</p><p class="travel-tips">Carry a light rain jacket, start the drive early, and check forest access before setting out.</p></div>
+                </article>
+
+                <article class="destination-card" id="munnar" data-top-rated="true" data-season="winter" data-person-cost="3200" data-couple-cost="5900" data-days="3" data-rating="4.9">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Mountain lake and green highlands near Munnar" loading="lazy"><span class="image-rating">★ 4.9</span><span class="season-tag">Winter</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Munnar, Idukki, Kerala">India <span>⌄</span></p><h3>Munnar</h3><p class="card-blurb">Endless tea gardens, cool air, and the kind of quiet that stays with you.</p><p class="route-line" data-route="Kochi → Adimali → Devikulam → Munnar">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹3,200</strong> / person</span><span>3 days minimum</span></div><p class="couple-price">Couple package from ₹5,900</p><ul class="attractions"><li>Eravikulam National Park</li><li>Mattupetty Dam</li><li>Top Station</li><li>Tea Museum</li><li>Attukad Waterfalls</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-munnar">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>Set high in the Western Ghats, Munnar pairs rolling tea estates with misty peaks and cool mornings. Wander through fragrant plantations or take a scenic drive to the region's panoramic viewpoints.</p><p class="best-time">September to March for crisp weather and clear mountain views.</p><p class="travel-tips">Pack a warm layer for evenings and book popular park visits ahead of time.</p></div>
+                </article>
+
+                <article class="destination-card" id="goa" data-top-rated="true" data-season="winter" data-person-cost="3800" data-couple-cost="7000" data-days="4" data-rating="4.8">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Warm sunset over a beach in Goa" loading="lazy"><span class="image-rating">★ 4.8</span><span class="season-tag">Winter</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Goa, India">India <span>⌄</span></p><h3>Goa</h3><p class="card-blurb">Golden beaches, Portuguese lanes, and evenings made for lingering.</p><p class="route-line" data-route="Panaji → Mapusa → Anjuna → Candolim">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹3,800</strong> / person</span><span>4 days minimum</span></div><p class="couple-price">Couple package from ₹7,000</p><ul class="attractions"><li>Palolem Beach</li><li>Fort Aguada</li><li>Basilica of Bom Jesus</li><li>Chapora Fort</li><li>Dudhsagar Falls</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-goa">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>Goa is more than a beach break: discover colorful old quarters, lively markets, quiet coves, and a delicious blend of coastal cuisines.</p><p class="best-time">November to February for sunny, comfortable beach days.</p><p class="travel-tips">Rent transport from a licensed provider, dress respectfully at heritage sites, and protect the coastline by leaving no litter.</p></div>
+                </article>
+
+                <article class="destination-card" id="manali" data-top-rated="true" data-season="summer" data-person-cost="3500" data-couple-cost="6500" data-days="4" data-rating="4.8">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Snow-capped Himalayan mountains near Manali" loading="lazy"><span class="image-rating">★ 4.8</span><span class="season-tag">Summer</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Manali, Kullu, Himachal Pradesh">India <span>⌄</span></p><h3>Manali</h3><p class="card-blurb">Himalayan trails, riverside cafes, and crisp mountain air.</p><p class="route-line" data-route="Chandigarh → Mandi → Kullu → Manali">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹3,500</strong> / person</span><span>4 days minimum</span></div><p class="couple-price">Couple package from ₹6,500</p><ul class="attractions"><li>Solang Valley</li><li>Hadimba Temple</li><li>Old Manali</li><li>Rohtang Pass</li><li>Jogini Falls</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-manali">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>Manali blends cedar forests and Himalayan scenery with a lively mountain-town spirit. Spend a day exploring the old town, then head out to a valley or a nearby trail.</p><p class="best-time">March to June for pleasant weather; December to February for snow.</p><p class="travel-tips">Mountain roads can change with weather. Check local conditions and carry layers, even in summer.</p></div>
+                </article>
+
+                <article class="destination-card" id="jaipur" data-season="winter" data-person-cost="2800" data-couple-cost="5100" data-days="3" data-rating="4.7">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Hawa Mahal in Jaipur" loading="lazy"><span class="image-rating">★ 4.7</span><span class="season-tag">Winter</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Jaipur, Rajasthan">India <span>⌄</span></p><h3>Jaipur</h3><p class="card-blurb">Rose-colored palaces, lively bazaars, and royal Rajasthani heritage.</p><p class="route-line" data-route="Jaipur Junction → Hawa Mahal → Amber Fort">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹2,800</strong> / person</span><span>3 days minimum</span></div><p class="couple-price">Couple package from ₹5,100</p><ul class="attractions"><li>Amber Fort</li><li>Hawa Mahal</li><li>City Palace</li><li>Jantar Mantar</li><li>Jal Mahal</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-jaipur">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>Jaipur's pink facades, grand forts, and artisan bazaars make every wander feel like a discovery. Explore the old city on foot and leave time for a sunset view over the Aravalli hills.</p><p class="best-time">October to March, when daytime temperatures are comfortable.</p><p class="travel-tips">Start sightseeing early, carry water, and agree on a fare before taking local transport.</p></div>
+                </article>
+
+                <article class="destination-card" id="darjeeling" data-season="summer" data-person-cost="3000" data-couple-cost="5500" data-days="3" data-rating="4.7">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Sunrise over the mountain ridges near Darjeeling" loading="lazy"><span class="image-rating">★ 4.7</span><span class="season-tag">Summer</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Darjeeling, West Bengal">India <span>⌄</span></p><h3>Darjeeling</h3><p class="card-blurb">Tea-scented mornings, toy train rides, and Kanchenjunga views.</p><p class="route-line" data-route="Siliguri → Kurseong → Ghoom → Darjeeling">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹3,000</strong> / person</span><span>3 days minimum</span></div><p class="couple-price">Couple package from ₹5,500</p><ul class="attractions"><li>Tiger Hill</li><li>Batasia Loop</li><li>Darjeeling Himalayan Railway</li><li>Peace Pagoda</li><li>Happy Valley Tea Estate</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-darjeeling">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>Darjeeling's mountain light, historic railway, and tea gardens reward travelers who take their time. Wake early for a Himalayan sunrise and explore the hillside lanes at an easy pace.</p><p class="best-time">March to May and October to November for clearer skies.</p><p class="travel-tips">Sunrise viewpoints get busy; bring warm clothing and check train schedules before your visit.</p></div>
+                </article>
+
+                <article class="destination-card" id="udaipur" data-season="winter" data-person-cost="3100" data-couple-cost="5700" data-days="3" data-rating="4.8">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Historic palace architecture in Udaipur" loading="lazy"><span class="image-rating">★ 4.8</span><span class="season-tag">Winter</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Udaipur, Rajasthan">India <span>⌄</span></p><h3>Udaipur</h3><p class="card-blurb">Lakeside sunsets, marble palaces, and romantic old-city streets.</p><p class="route-line" data-route="Udaipur City Station → City Palace → Lake Pichola">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹3,100</strong> / person</span><span>3 days minimum</span></div><p class="couple-price">Couple package from ₹5,700</p><ul class="attractions"><li>City Palace</li><li>Lake Pichola</li><li>Jag Mandir</li><li>Saheliyon Ki Bari</li><li>Monsoon Palace</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-udaipur">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>Udaipur's lakes and palaces create a graceful backdrop for a relaxed city break. Take a boat across Lake Pichola, then spend the evening exploring the old town's small galleries and cafes.</p><p class="best-time">September to March for cooler weather and pleasant evenings.</p><p class="travel-tips">Reserve popular lake activities in advance and dress modestly when visiting temples.</p></div>
+                </article>
+
+                <article class="destination-card" id="rishikesh" data-season="autumn" data-person-cost="2400" data-couple-cost="4400" data-days="2" data-rating="4.6">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Riverside forest scenery near Rishikesh" loading="lazy"><span class="image-rating">★ 4.6</span><span class="season-tag">Autumn</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Rishikesh, Uttarakhand">India <span>⌄</span></p><h3>Rishikesh</h3><p class="card-blurb">River breezes, forested foothills, and a restorative riverside rhythm.</p><p class="route-line" data-route="Haridwar → Shivpuri → Lakshman Jhula → Rishikesh">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹2,400</strong> / person</span><span>2 days minimum</span></div><p class="couple-price">Couple package from ₹4,400</p><ul class="attractions"><li>Lakshman Jhula</li><li>Triveni Ghat</li><li>Neer Garh Waterfall</li><li>Beatles Ashram</li><li>Shivpuri</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-rishikesh">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>At the meeting point of river and hills, Rishikesh offers peaceful walks, lively cafes, and a deep connection to the Ganges. Choose a gentle riverside day or add an outdoor adventure with a reputable local operator.</p><p class="best-time">September to November and February to April.</p><p class="travel-tips">Follow local river-safety guidance and keep the ghats clean and quiet.</p></div>
+                </article>
+
+                <article class="destination-card" id="alleppey" data-season="monsoon" data-person-cost="2600" data-couple-cost="4800" data-days="2" data-rating="4.7">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Kerala backwaters and tropical greenery near Alappuzha" loading="lazy"><span class="image-rating">★ 4.7</span><span class="season-tag">Monsoon</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Alappuzha, Kerala">India <span>⌄</span></p><h3>Alappuzha</h3><p class="card-blurb">Drift through palm-fringed backwaters and Kerala's village life.</p><p class="route-line" data-route="Kochi → Cherthala → Alappuzha → Kuttanad">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹2,600</strong> / person</span><span>2 days minimum</span></div><p class="couple-price">Couple package from ₹4,800</p><ul class="attractions"><li>Alappuzha Beach</li><li>Vembanad Lake</li><li>Kuttanad</li><li>Marari Beach</li><li>Pathiramanal Island</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-alleppey">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>Alappuzha is a front-row seat to Kerala's backwater life: quiet canals, green paddy fields, and coastal sunsets. Explore by boat with an operator committed to responsible, low-impact travel.</p><p class="best-time">November to February for drier days; monsoon for lush scenery.</p><p class="travel-tips">Confirm boat inclusions and timings in advance, and bring sun protection for the water.</p></div>
+                </article>
+
+                <article class="destination-card" id="hampi" data-season="winter" data-person-cost="2300" data-couple-cost="4200" data-days="2" data-rating="4.6">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Ancient stone architecture in Hampi" loading="lazy"><span class="image-rating">★ 4.6</span><span class="season-tag">Winter</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Hampi, Vijayanagara, Karnataka">India <span>⌄</span></p><h3>Hampi</h3><p class="card-blurb">A surreal landscape of ancient temples and giant boulder-strewn hills.</p><p class="route-line" data-route="Hospet → Kamalapura → Hampi Bazaar">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹2,300</strong> / person</span><span>2 days minimum</span></div><p class="couple-price">Couple package from ₹4,200</p><ul class="attractions"><li>Virupaksha Temple</li><li>Vittala Temple</li><li>Stone Chariot</li><li>Matanga Hill</li><li>Lotus Mahal</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-hampi">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>Hampi's immense boulders and remarkable Vijayanagara-era ruins create an open-air history experience unlike anywhere else. Explore the site thoughtfully and take time to enjoy the landscape between monuments.</p><p class="best-time">October to February, when days are cooler and more comfortable.</p><p class="travel-tips">Wear sturdy shoes, bring water, and follow posted guidance around protected monuments.</p></div>
+                </article>
+
+                <article class="destination-card" id="shimla" data-season="summer" data-person-cost="2900" data-couple-cost="5300" data-days="3" data-rating="4.5">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Snowy Himalayan peaks near Shimla" loading="lazy"><span class="image-rating">★ 4.5</span><span class="season-tag">Summer</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Shimla, Himachal Pradesh">India <span>⌄</span></p><h3>Shimla</h3><p class="card-blurb">Colonial-era charm, pine-scented walks, and sweeping Himalayan views.</p><p class="route-line" data-route="Kalka → Solan → Shoghi → Shimla">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹2,900</strong> / person</span><span>3 days minimum</span></div><p class="couple-price">Couple package from ₹5,300</p><ul class="attractions"><li>The Ridge</li><li>Jakhoo Temple</li><li>Kalka–Shimla Railway</li><li>Christ Church</li><li>Kufri</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-shimla">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>Shimla's tree-lined promenades, mountain air, and historic rail journey make it a classic Himalayan retreat. Explore the pedestrian center, then venture out to nearby forest and valley viewpoints.</p><p class="best-time">March to June for mild days; December to February for winter scenery.</p><p class="travel-tips">The town center is best explored on foot. Reserve the heritage train early during peak season.</p></div>
+                </article>
+
+                <article class="destination-card" id="andaman" data-season="summer" data-person-cost="5200" data-couple-cost="9600" data-days="5" data-rating="4.8">
+                    <div class="card-image-wrap"><img class="destination-image" src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Tropical island cove with clear turquoise water in the Andamans" loading="lazy"><span class="image-rating">★ 4.8</span><span class="season-tag">Summer</span></div>
+                    <div class="card-body"><p class="country-line" data-country="India" data-location="Swaraj Dweep, Andaman and Nicobar Islands">India <span>⌄</span></p><h3>Andaman Islands</h3><p class="card-blurb">Clear blue water, quiet islands, and coral-rich adventures.</p><p class="route-line" data-route="Port Blair → Ferry → Swaraj Dweep">Hover me to know the route</p><div class="card-meta"><span>From <strong>₹5,200</strong> / person</span><span>5 days minimum</span></div><p class="couple-price">Couple package from ₹9,600</p><ul class="attractions"><li>Radhanagar Beach</li><li>Cellular Jail</li><li>Elephant Beach</li><li>Neil Island</li><li>Baratang Island</li></ul><div class="card-actions"><button class="button button-soft package-details-button" type="button">Package details</button><button class="text-button description-button" type="button">View description ↗</button></div><button class="button button-dark ready-button" type="button" id="ready-andaman">Ready to go <span>→</span></button></div>
+                    <div class="destination-details" hidden><p>The Andaman Islands pair brilliant water and forested shores with rich marine life. Split your time between island beaches, heritage in Port Blair, and a responsible reef experience.</p><p class="best-time">October to May for calmer seas and better conditions for island hopping.</p><p class="travel-tips">Check ferry schedules, follow marine-park rules, and never touch or remove coral.</p></div>
+                </article>
+
+            </div>
+            <p class="empty-state" id="empty-state" hidden>No destinations match your search. Try another name or season.</p>
+        </section>
+
+        <section class="booking-section" id="booking">
+            <div class="booking-intro"><p class="eyebrow">Make it official</p><h2>Your next adventure<br>starts right here.</h2><p>Choose a destination above and get your travel details together. We'll take it from there.</p></div>
+            <div class="booking-panel">
+                <form id="booking-form" novalidate>
+                    <div class="form-heading"><h3>Plan your getaway</h3><p>Tell us a little about your trip.</p></div>
+                    <div class="form-grid">
+                        <label>Full name<input id="full-name" type="text" placeholder="e.g. Alex Morgan" autocomplete="name"><span class="field-error" id="name-error"></span></label>
+                        <label>Email address<input id="email" type="email" placeholder="you@example.com" autocomplete="email"><span class="field-error" id="email-error"></span></label>
+                        <label>Mobile number<input id="mobile" type="tel" placeholder="10-digit mobile number" inputmode="numeric" autocomplete="tel"><span class="field-error" id="mobile-error"></span></label>
+                        <label>Destination<input id="booking-destination" type="text" placeholder="Choose a destination" readonly><span class="field-error" id="destination-error"></span></label>
+                        <label>Number of travelers<input id="travelers" type="number" min="1" value="1" placeholder="How many are going?"><span class="field-error" id="travelers-error"></span></label>
+                        <div class="choose-package-field"><span class="label-text">Your package</span><button class="button button-soft full-width" id="choose-package" type="button">Choose a package</button><span class="field-error" id="package-error"></span></div>
+                    </div>
+                    <div class="selected-package-fields">
+                        <label>Package type<input id="package-type" type="text" placeholder="Not selected" readonly></label>
+                        <label>Number of days<input id="package-days" type="text" placeholder="—" readonly></label>
+                        <label>Accommodation<input id="package-accommodation" type="text" placeholder="—" readonly></label>
+                        <label>Food<input id="package-food" type="text" placeholder="—" readonly></label>
+                        <label>Package cost / unit<input id="package-cost" type="text" placeholder="—" readonly></label>
+                        <label>Total cost<input id="total-cost" type="text" placeholder="—" readonly></label>
+                    </div>
+                    <div class="form-actions"><button class="button button-primary" type="submit">Confirm booking ↗</button><button class="button button-reset" type="reset">Reset form</button></div>
+                    <div class="booking-summary" id="booking-summary" hidden aria-live="polite"></div>
+                    <div class="confirmation-card" id="confirmation-card" hidden></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="footer-main">
+            <div class="footer-brand"><a class="logo" href="#home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 25 16 16l5 5 4-4 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m25 9 1.7 4.3L31 15l-4.3 1.7L25 21l-1.7-4.3L19 15l4.3-1.7L25 9Z" fill="currentColor"/></svg><span class="logo-name"><span>Roam</span> India<span class="logo-dot">.</span></span></a><p>Thoughtful trips, unforgettable places, and more reasons to take the scenic route.</p><div class="social-links"><a href="https://www.instagram.com/" aria-label="Instagram">Instagram ↗</a><a href="https://www.facebook.com/" aria-label="Facebook">Facebook ↗</a><a href="https://www.youtube.com/" aria-label="YouTube">YouTube ↗</a></div></div>
+            <div><h3>Quick links</h3><a href="#home">Home</a><a href="#top-rated">Top rated</a><a href="#destinations">Destinations</a><a href="#booking">Plan a trip</a></div>
+            <div><h3>Popular places</h3><a href="#ponmudi">Ponmudi</a><a href="#munnar">Munnar</a><a href="#goa">Goa</a><a href="#manali">Manali</a></div>
+            <div><h3>Say hello</h3><a href="mailto:hello@roamindia.example">hello@roamindia.example</a><a href="tel:+9118005550142">+91 1800 555 0142</a><p>Mon–Sat, 9:00 am–6:00 pm IST</p></div>
+        </div>
+        <div class="footer-bottom"><span>© 2025 Roam India. Made for the journey.</span><a href="#home">Back to top ↑</a></div>
+    </footer>
+
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+        <section class="modal-card" id="package-modal" role="dialog" aria-modal="true" aria-labelledby="package-modal-title" hidden>
+            <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+            <p class="eyebrow">A little more detail</p><h2 id="package-modal-title">Package details</h2><p class="modal-destination"></p>
+            <div class="package-options">
+                <label>Package type<select id="modal-package-type"><option value="person">Person package</option><option value="couple">Couple package</option></select></label>
+                <label>Quantity<input id="modal-quantity" type="number" min="1" value="1"></label>
+                <label>Number of days<input id="modal-days" type="number" min="1" value="2"></label>
+            </div>
+            <div class="included-row"><span>Accommodation <strong>Included</strong></span><span>Food <strong>Included</strong></span></div>
+            <div class="estimate-row"><span>Cost per unit <strong id="modal-unit-cost"></strong></span><span>Estimated total <strong id="modal-total-cost"></strong></span></div>
+            <button class="button button-primary full-width modal-confirm" type="button" hidden>Choose this package</button>
+        </section>
+
+        <section class="modal-card description-modal" id="description-modal" role="dialog" aria-modal="true" aria-labelledby="description-title" hidden>
+            <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+            <p class="eyebrow">Get to know the place</p><h2 id="description-title"></h2>
+            <div class="gallery"><button type="button" class="gallery-arrow" id="gallery-previous" aria-label="Previous image">←</button><img id="gallery-image" src="" alt=""><button type="button" class="gallery-arrow" id="gallery-next" aria-label="Next image">→</button></div>
+            <div class="gallery-sources" hidden aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="">
+                <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="">
+            </div>
+            <div class="gallery-dots" id="gallery-dots"></div>
+            <div class="description-content"><p id="description-copy"></p><div class="description-columns"><div><h3>Best time to visit</h3><p id="description-best-time"></p></div><div><h3>Nearby attractions</h3><ul id="description-attractions"></ul></div></div><h3>Travel tips</h3><p id="description-tips"></p></div>
+            <button class="button button-dark description-ready" id="ready-from-description" type="button">Ready to go →</button>
+        </section>
+
+        <section class="modal-card journey-modal" id="journey-modal" role="dialog" aria-modal="true" aria-labelledby="journey-title" hidden>
+            <p class="eyebrow">The countdown begins</p><h2 id="journey-title">Have a wonderful journey!</h2><p>Your booking is confirmed. We can't wait for you to experience somewhere new.</p><button class="button button-primary" type="button" data-close>Close</button>
+        </section>
+    </div>
+</body>
+</html>
