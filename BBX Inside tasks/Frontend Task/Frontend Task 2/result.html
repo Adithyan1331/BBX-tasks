@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registration Received</title>
+</head>
+<body>
+  <main>
+    <h1>Registration received</h1>
+    <p>Name: {{ details.name }}</p>
+    <p>Email: {{ details.email }}</p>
+    <p>Phone: {{ details.phone }}</p>
+    <p>Age: {{ details.age }}</p>
+    <p>Gender: {{ details.gender }}</p>
+    <p>Interests: {{ details.interests | join(", ") }}</p>
+    <p>Your resume was received.</p>
+    <a href="{{ url_for('register') }}">Return to registration</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secure Registration</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='form.js') }}" defer></script>
+</head>
+<body>
+<main>
+  <h1>Registration</h1>
+  <p>Complete all three steps. Fields marked required must be completed.</p>
+
+  <form id="registration-form" method="post"
+        action="{{ url_for('register') }}" enctype="multipart/form-data"
+        novalidate>
+    <input type="hidden" name="form_token" value="{{ session['form_token'] }}">
+
+    <section class="step" aria-labelledby="step1-heading">
+      <h2 id="step1-heading">Step 1: Personal details</h2>
+
+      <label for="name">Full name (2–60 characters)</label>
+      <input id="name" name="name" type="text" required
+             minlength="2" maxlength="60"
+             autocomplete="name"
+             pattern="[A-Za-z][A-Za-z .'-]{1,59}"
+             title="Use letters, spaces, apostrophes, periods or hyphens."
+             aria-describedby="name-error"
+             aria-invalid="{{ 'true' if errors.get('name') else 'false' }}">
+      <p id="name-error" class="error" aria-live="polite">{{ errors.get('name', '') }}</p>
+
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" required maxlength="254"
+             autocomplete="email" aria-describedby="email-error"
+             aria-invalid="{{ 'true' if errors.get('email') else 'false' }}">
+      <p id="email-error" class="error" aria-live="polite">{{ errors.get('email', '') }}</p>
+
+      <label for="password">Password (12–64 characters)</label>
+      <input id="password" name="password" type="password" required
+             minlength="12" maxlength="64" autocomplete="new-password"
+             aria-describedby="password-error"
+             aria-invalid="{{ 'true' if errors.get('password') else 'false' }}">
+      <p id="password-error" class="error" aria-live="polite">{{ errors.get('password', '') }}</p>
+
+      <label for="phone">Phone number</label>
+      <!-- type=tel preserves + and leading zeros; type=number is for quantities. -->
+      <input id="phone" name="phone" type="tel" required
+             pattern="\+?[0-9]{10,15}"
+             title="Enter 10–15 digits, optionally starting with +."
+             autocomplete="tel" aria-describedby="phone-error"
+             aria-invalid="{{ 'true' if errors.get('phone') else 'false' }}">
+      <p id="phone-error" class="error" aria-live="polite">{{ errors.get('phone', '') }}</p>
+
+      <label for="age">Age (18–100)</label>
+      <input id="age" name="age" type="number" required min="18" max="100"
+             step="1" aria-describedby="age-error"
+             aria-invalid="{{ 'true' if errors.get('age') else 'false' }}">
+      <p id="age-error" class="error" aria-live="polite">{{ errors.get('age', '') }}</p>
+    </section>
+
+    <section class="step" aria-labelledby="step2-heading">
+      <h2 id="step2-heading">Step 2: Preferences</h2>
+
+      <fieldset>
+        <legend>Gender (choose one)</legend>
+        {% for value, label in [
+          ('female', 'Female'), ('male', 'Male'),
+          ('nonbinary', 'Non-binary'), ('prefer_not', 'Prefer not to say')
+        ] %}
+          <label>
+            <input type="radio" name="gender" value="{{ value }}" required
+                   aria-describedby="gender-error"
+                   aria-invalid="{{ 'true' if errors.get('gender') else 'false' }}">
+            {{ label }}
+          </label>
+        {% endfor %}
+        <p id="gender-error" class="error" aria-live="polite">{{ errors.get('gender', '') }}</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Interests (choose at least one)</legend>
+        {% for value, label in [
+          ('web', 'Web development'), ('python', 'Python'),
+          ('ai', 'Artificial intelligence')
+        ] %}
+          <label>
+            <input type="checkbox" name="interests" value="{{ value }}"
+                   aria-describedby="interests-error"
+                   aria-invalid="{{ 'true' if errors.get('interests') else 'false' }}">
+            {{ label }}
+          </label>
+        {% endfor %}
+        <p id="interests-error" class="error" aria-live="polite">{{ errors.get('interests', '') }}</p>
+      </fieldset>
+    </section>
+
+    <section class="step" aria-labelledby="step3-heading">
+      <h2 id="step3-heading">Step 3: Upload</h2>
+
+      <label for="resume">Resume (PDF only, maximum 2 MB)</label>
+      <input id="resume" name="resume" type="file" required accept=".pdf,application/pdf"
+             aria-describedby="resume-help resume-error"
+             aria-invalid="{{ 'true' if errors.get('resume') else 'false' }}">
+      <p id="resume-help">Choose a PDF document no larger than 2 MB.</p>
+      <p id="resume-error" class="error" aria-live="polite">{{ errors.get('resume', '') }}</p>
+    </section>
+
+    <p id="form-error" class="error" role="alert"></p>
+    <nav aria-label="Form steps">
+      <button type="button" id="previous">Previous</button>
+      <button type="button" id="next">Next</button>
+      <button type="submit" id="submit">Submit registration</button>
+    </nav>
+  </form>
+</main>
+</body>
+</html>
