@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f5f2">
+    <title>Layout Lab — CSS, built from first principles</title>
+    <link rel="stylesheet" href="assets/css/layout-lab.css">
+    <script src="assets/js/layout-lab.js" defer></script>
+</head>
+<body>
+    <div class="app-shell">
+        <header class="site-header">
+            <a class="brand" href="#top" aria-label="Layout Lab home">
+                <span class="brand-mark" aria-hidden="true">L<span>.</span></span>
+                <span class="brand-name">layout<span>lab</span></span>
+            </a>
+            <nav class="top-nav" aria-label="Main navigation">
+                <a class="nav-link active" href="#overview">Playground</a>
+                <a class="nav-link" href="#diagnostics">Diagnostics</a>
+                <a class="nav-link" href="#answers">Field notes</a>
+            </nav>
+            <div class="header-actions">
+                <span class="live-status"><span></span> CSS only</span>
+                <button class="type-toggle" type="button" aria-pressed="false">
+                    <span aria-hidden="true">Aa</span> <span class="type-toggle-label">24px type test</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="page-layout" id="top">
+            <aside class="sidebar" aria-label="Page sections">
+                <div class="sidebar-label">IN THIS LAB</div>
+                <a class="side-link selected" href="#overview"><span>01</span> The canvas</a>
+                <a class="side-link" href="#layout-primitives"><span>02</span> Layout primitives</a>
+                <a class="side-link" href="#diagnostics"><span>03</span> Break it / fix it</a>
+                <a class="side-link" href="#answers"><span>04</span> Field notes</a>
+                <div class="sidebar-card">
+                    <span class="sidebar-card-icon" aria-hidden="true">✳</span>
+                    <p>Good layouts are not magic. They’re a few clear rules, working together.</p>
+                    <span class="sidebar-caption">A SMALL CSS FIELD GUIDE</span>
+                </div>
+                <div class="sidebar-bottom"><span class="online-dot"></span> YOUR CANVAS IS READY</div>
+            </aside>
+
+            <main class="main-content" id="overview">
+                <section class="hero">
+                    <div class="hero-copy">
+                        <div class="eyebrow"><span class="eyebrow-line"></span> THE CSS FIELD GUIDE <span class="eyebrow-index">NO. 001</span></div>
+                        <h1>Build it.<br><span>Break it.</span> Understand it.</h1>
+                        <p class="hero-description">A hands-on study of the layout primitives behind the pages we use every day. No frameworks. Just the browser, a few good rules, and room to experiment.</p>
+                        <div class="hero-actions">
+                            <a class="primary-button" href="#layout-primitives">Explore the canvas <span aria-hidden="true">↘</span></a>
+                            <button class="text-button" type="button" data-open-modal>Open the overlay <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </div>
+                    <div class="hero-art" aria-label="Abstract illustration of a responsive layout">
+                        <div class="art-orbit orbit-one"></div>
+                        <div class="art-orbit orbit-two"></div>
+                        <div class="art-sun"></div>
+                        <div class="art-card art-card-back"></div>
+                        <div class="art-card art-card-front">
+                            <span class="art-card-tag">LAYOUT STUDY · 01</span>
+                            <span class="art-card-title">Make space<br>for the good stuff.</span>
+                            <span class="art-card-foot"><span>GRID + FLEX</span><span>↗</span></span>
+                        </div>
+                        <span class="art-coordinate coordinate-top">40° 42′ 46″ N</span>
+                        <span class="art-coordinate coordinate-bottom">LAYOUT / 001</span>
+                        <span class="art-spark spark-one">✳</span>
+                        <span class="art-spark spark-two">✳</span>
+                    </div>
+                </section>
+
+                <section class="principles-section" id="layout-primitives" aria-labelledby="primitives-title">
+                    <div class="section-heading">
+                        <div>
+                            <div class="section-kicker">THE BUILDING BLOCKS <span>01 — 03</span></div>
+                            <h2 id="primitives-title">Small rules. <span>Big structure.</span></h2>
+                        </div>
+                        <p>Three primitives, one adaptable interface. Resize your screen and watch the composition respond.</p>
+                    </div>
+
+                    <div class="concept-grid">
+                        <article class="concept-card structure-card">
+                            <div class="card-topline"><span class="concept-icon grid-icon" aria-hidden="true">▦</span><span class="concept-number">01 / STRUCTURE</span></div>
+                            <h3>Grid sets the stage.</h3>
+                            <p>The page shell uses named grid areas: a sticky header, a sidebar, this main canvas, and a footer.</p>
+                            <div class="mini-layout" aria-label="Illustration of a four-area CSS grid">
+                                <span class="mini-header">header</span><span class="mini-side">side</span><span class="mini-main">main</span><span class="mini-footer">footer</span>
+                            </div>
+                            <span class="card-footnote">PAGE SHELL · CSS GRID</span>
+                        </article>
+
+                        <article class="concept-card flex-card">
+                            <div class="card-topline"><span class="concept-icon flex-icon" aria-hidden="true">↔</span><span class="concept-number">02 / ALIGNMENT</span></div>
+                            <h3>Flex finds the rhythm.</h3>
+                            <p>Navigation, card headers, and form rows align in one dimension with flexible space.</p>
+                            <div class="mini-nav" aria-label="Illustration of a flexbox navigation">
+                                <span class="mini-brand"><i></i><i></i></span><span class="mini-nav-item"></span><span class="mini-nav-item"></span><span class="mini-nav-pill"></span>
+                            </div>
+                            <span class="card-footnote">COMPONENTS · CSS FLEXBOX</span>
+                        </article>
+
+                        <article class="concept-card fluid-card">
+                            <div class="card-topline"><span class="concept-icon fluid-icon" aria-hidden="true">⌘</span><span class="concept-number">03 / ADAPTATION</span></div>
+                            <h3>Auto-fit makes room.</h3>
+                            <p>Cards wrap naturally with <code>auto-fit</code> and <code>minmax()</code>—no breakpoint needed.</p>
+                            <div class="mini-card-grid" aria-label="Illustration of an automatically wrapping card grid">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="card-footnote">CARDS · NO MEDIA QUERY</span>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="workbench-section" aria-labelledby="workbench-title">
+                    <div class="section-heading workbench-heading">
+                        <div>
+                            <div class="section-kicker">A RESPONSIVE SYSTEM <span>LIVE DEMO</span></div>
+                            <h2 id="workbench-title">One canvas, <span>many screens.</span></h2>
+                        </div>
+                        <span class="breakpoint-badge"><span></span> MOBILE FIRST</span>
+                    </div>
+                    <div class="workbench">
+                        <div class="workbench-intro">
+                            <span class="workbench-label">THE COLLECTION</span>
+                            <h3>Ideas worth<br>making space for.</h3>
+                            <p>This card collection uses a fluid grid. Drag the viewport narrower—or try the type-size control above.</p>
+                            <a href="#diagnostics" class="workbench-link">Next: find the bugs <span aria-hidden="true">→</span></a>
+                        </div>
+                        <div class="collection-grid">
+                            <article class="collection-card collection-one">
+                                <div class="collection-visual visual-one"><span>01</span><i></i><b></b></div>
+                                <div class="collection-meta"><span>SPATIAL STUDY</span><span>03 MIN</span></div>
+                                <h4>Give every idea a little room.</h4>
+                                <div class="collection-bottom"><span>GRID / COMPOSITION</span><span aria-hidden="true">↗</span></div>
+                            </article>
+                            <article class="collection-card collection-two">
+                                <div class="collection-visual visual-two"><span>02</span><i></i><b></b></div>
+                                <div class="collection-meta"><span>TYPE EXPERIMENT</span><span>05 MIN</span></div>
+                                <h4>Let the words find their rhythm.</h4>
+                                <div class="collection-bottom"><span>TYPE / FLOW</span><span aria-hidden="true">↗</span></div>
+                            </article>
+                            <article class="collection-card collection-three">
+                                <div class="collection-visual visual-three"><span>03</span><i></i><b></b></div>
+                                <div class="collection-meta"><span>COLOR FIELD</span><span>02 MIN</span></div>
+                                <h4>Make a quiet detail feel alive.</h4>
+                                <div class="collection-bottom"><span>COLOR / CONTRAST</span><span aria-hidden="true">↗</span></div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="form-demo-section" aria-labelledby="form-title">
+                    <div class="form-demo-copy">
+                        <div class="section-kicker">FLEXBOX IN THE SMALL DETAILS <span>FORM ROW</span></div>
+                        <h2 id="form-title">A little breathing room<br><span>goes a long way.</span></h2>
+                        <p>Labels and controls share a flexible row on larger screens, then stack comfortably on small ones.</p>
+                    </div>
+                    <form class="signup-card" action="#form-title" method="get">
+                        <div class="signup-card-heading"><span class="form-icon" aria-hidden="true">✳</span><div><h3>Get the field notes</h3><p>One thoughtful CSS idea, now and then.</p></div></div>
+                        <label class="form-row" for="email-address"><span>Email address</span><input id="email-address" type="email" placeholder="you@example.com" autocomplete="email" required></label>
+                        <div class="form-row"><span>What are you learning?</span><select aria-label="What are you learning?"><option>CSS layout</option><option>Responsive design</option><option>Design systems</option></select></div>
+                        <button class="form-submit" type="submit">Save my seat <span aria-hidden="true">→</span></button>
+                        <p class="form-note">No noise. Unsubscribe whenever you like.</p>
+                    </form>
+                </section>
+
+                <section class="diagnostics-section" id="diagnostics" aria-labelledby="diagnostics-title">
+                    <div class="section-heading diagnostics-heading">
+                        <div>
+                            <div class="section-kicker">THE DEBUGGING ROOM <span>03 EXERCISES</span></div>
+                            <h2 id="diagnostics-title">Break the rules. <span>Learn the why.</span></h2>
+                        </div>
+                        <p>Each bug is real. Each fix is smaller than you think.</p>
+                    </div>
+
+                    <div class="diagnostic-list">
+                        <article class="diagnostic-card">
+                            <div class="diagnostic-copy">
+                                <div class="diagnostic-title-row"><span class="diagnostic-index">01</span><span class="bug-label">STACKING CONTEXT</span></div>
+                                <h3>How can <code>9999</code> lose to <code>1</code>?</h3>
+                                <p>A child’s z-index only competes inside its parent’s stacking context. The transformed parent is painted as one unit beneath its sibling.</p>
+                                <div class="code-note"><span>THE FIX</span>Raise the parent’s stacking level, or remove the context-creating property.</div>
+                            </div>
+                            <div class="stack-demo">
+                                <div class="demo-labels"><span>✕ BUG</span><span>✓ FIX</span></div>
+                                <div class="stack-pair">
+                                    <div class="stack-stage stack-broken" aria-label="Broken z-index example"><span class="stack-base">PARENT · z-index: 0<br><small>transform creates a context</small><span class="stack-child">CHILD · 9999</span></span><span class="stack-rival">SIBLING · 1</span></div>
+                                    <div class="stack-stage stack-fixed" aria-label="Fixed z-index example"><span class="stack-base">PARENT · z-index: 2<br><small>context now sits on top</small><span class="stack-child">CHILD · 9999</span></span><span class="stack-rival">SIBLING · 1</span></div>
+                                </div>
+                                <p class="demo-caption">The child can’t escape its parent’s stacking context.</p>
+                            </div>
+                        </article>
+
+                        <article class="diagnostic-card">
+                            <div class="diagnostic-copy">
+                                <div class="diagnostic-title-row"><span class="diagnostic-index">02</span><span class="bug-label">SPECIFICITY</span></div>
+                                <h3>A class can’t outvote an ID.</h3>
+                                <p>An ID selector has greater specificity than a class, regardless of source order. Adding more class selectors is the wrong contest.</p>
+                                <div class="code-note"><span>THE FIX</span>Use a reusable class for styling; keep IDs for anchors and relationships.</div>
+                            </div>
+                            <div class="specificity-demo">
+                                <div class="specificity-state">
+                                    <span class="demo-state-label">✕ BEFORE · ID WINS</span>
+                                    <div class="specificity-sample specificity-broken" id="specificity-demo">This class loses.</div>
+                                    <code>#notice { color: coral }<br>.notice { color: green }</code>
+                                </div>
+                                <div class="specificity-state">
+                                    <span class="demo-state-label">✓ AFTER · CLASS SYSTEM</span>
+                                    <div class="specificity-sample specificity-fixed">One class, clear intent.</div>
+                                    <code>.notice { color: green }</code>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="diagnostic-card">
+                            <div class="diagnostic-copy">
+                                <div class="diagnostic-title-row"><span class="diagnostic-index">03</span><span class="bug-label">MARGIN COLLAPSE</span></div>
+                                <h3>Two margins. One gap.</h3>
+                                <p>Adjacent vertical block margins collapse: the larger margin wins instead of adding together. It’s not broken—it’s the model.</p>
+                                <div class="code-note"><span>THE FIX</span>Use a flex column with <code>gap</code> for predictable, additive spacing.</div>
+                            </div>
+                            <div class="margin-demo">
+                                <div class="margin-state">
+                                    <span class="demo-state-label">✕ COLLAPSED · 2rem, NOT 4rem</span>
+                                    <div class="margin-stage margin-broken"><span>FIRST BLOCK · margin-bottom: 2rem</span><span>SECOND BLOCK · margin-top: 2rem</span></div>
+                                </div>
+                                <div class="margin-state">
+                                    <span class="demo-state-label">✓ FLEX GAP · EXACTLY 2rem</span>
+                                    <div class="margin-stage margin-fixed"><span>FIRST BLOCK</span><span>SECOND BLOCK</span></div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="centering-section" aria-labelledby="centering-title">
+                    <div class="section-heading">
+                        <div>
+                            <div class="section-kicker">FOUR WAYS TO FIND THE MIDDLE <span>ALIGNMENT STUDY</span></div>
+                            <h2 id="centering-title">Same destination. <span>Different routes.</span></h2>
+                        </div>
+                    </div>
+                    <div class="centering-grid">
+                        <article class="center-method"><div class="center-stage center-flex"><span>HERE</span></div><h3>Flexbox</h3><p>Choose for one-dimensional layouts and when nearby siblings need alignment too.</p><code>align-items + justify-content</code></article>
+                        <article class="center-method"><div class="center-stage center-grid"><span>HERE</span></div><h3>Grid</h3><p>Choose when centering within a two-dimensional layout or grid cell is the goal.</p><code>place-items: center</code></article>
+                        <article class="center-method"><div class="center-stage center-transform"><span>HERE</span></div><h3>Transform</h3><p>Choose for overlays or when the element’s size is unknown and it needs exact centering.</p><code>50% + translate(-50%)</code></article>
+                        <article class="center-method"><div class="center-stage center-auto"><span>HERE</span></div><h3>Auto margins</h3><p>Choose for a known-size element inside a positioned container, without transform.</p><code>inset: 0; margin: auto</code></article>
+                    </div>
+                </section>
+
+                <section class="answers-section" id="answers" aria-labelledby="answers-title">
+                    <div class="section-heading">
+                        <div>
+                            <div class="section-kicker">THREE QUESTIONS, THREE STARTING POINTS <span>FIELD NOTES</span></div>
+                            <h2 id="answers-title">Keep these <span>in your back pocket.</span></h2>
+                        </div>
+                    </div>
+                    <div class="answer-grid">
+                        <article class="answer-card"><span class="answer-number">01 / THE BOX</span><h3>Explain the box model.</h3><p>Every element is a rectangular box made of content, padding, border, and margin. Content is the text or media inside. Padding adds breathing room between that content and the border; the border frames the padded area; margin creates space outside the border, between neighboring boxes. By default, a declared width applies only to the content, so padding and borders make the rendered box wider than expected. With <code>box-sizing: border-box</code>, the declared width includes content, padding, and border. That makes dimensions easier to reason about: a 20rem box stays 20rem wide, even when its padding changes.</p></article>
+                        <article class="answer-card"><span class="answer-number">02 / THE CASCADE</span><h3>How does specificity work?</h3><p>When multiple CSS declarations target the same property, the cascade first considers importance and origin, then selector specificity, then source order. Specificity is commonly compared as a tuple: IDs, classes/attributes/pseudo-classes, and elements/pseudo-elements. An ID outranks any number of classes; a class outranks any number of element selectors. If specificity ties, the later declaration wins. In practice, keep selectors intentionally simple, favor reusable classes for visual styling, and reserve IDs for unique page targets or accessibility relationships. This keeps the cascade understandable and avoids escalating selector weight—or reaching for <code>!important</code>—just to override earlier CSS.</p></article>
+                        <article class="answer-card"><span class="answer-number">03 / THE TOOL</span><h3>When do you reach for Grid rather than Flexbox?</h3><p>Reach for Grid when the layout has meaningful rows and columns, or when elements need to align across both axes: page shells, dashboards, galleries, and card collections are natural fits. Grid lets you define tracks and place items in relation to the whole layout. Reach for Flexbox when arranging items along one primary axis and distributing available space: a navigation bar, a button row, or a label paired with an input. They work well together. A page can use Grid for its large-scale structure, then Flexbox inside cards and controls. Choose based on the relationship you need, not on a rule that says one must replace the other.</p></article>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer class="site-footer">
+            <span class="footer-brand">layout<span>lab</span><i>.</i></span>
+            <span>Made with curiosity and a little bit of CSS.</span>
+            <a href="#top">BACK TO TOP ↑</a>
+        </footer>
+    </div>
+
+    <div class="modal-overlay" data-modal aria-hidden="true">
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" type="button" data-close-modal aria-label="Close dialog">×</button>
+            <span class="modal-kicker">A NOTE FROM THE LAB</span>
+            <div class="modal-symbol" aria-hidden="true">✳</div>
+            <h2 id="modal-title">Make room to experiment.</h2>
+            <p>This overlay is fixed to the viewport—not the document—and layered above the page with a deliberate z-index. Press Escape or the close button to return to the canvas.</p>
+            <button class="primary-button modal-done" type="button" data-close-modal>Back to the canvas <span aria-hidden="true">↗</span></button>
+            <span class="modal-footnote">POSITION: FIXED · Z-INDEX: 1000</span>
+        </section>
+    </div>
+</body>
+</html>

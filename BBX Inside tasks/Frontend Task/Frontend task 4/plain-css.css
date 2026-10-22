@@ -1,0 +1,301 @@
+
+/* ==============================
+   1. Base styles
+================================= */
+
+:root {
+    --brand-color: #2563eb;
+    --brand-hover: #1d4ed8;
+    --page-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #0f172a;
+    --muted-color: #64748b;
+    --border-color: #e2e8f0;
+    --featured-bg: #eff6ff;
+    --badge-text: #ffffff;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    padding: 48px 20px;
+    background: var(--page-bg);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ==============================
+   2. Page heading
+================================= */
+
+.page-header {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+    color: var(--brand-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.page-header h1 {
+    margin-bottom: 16px;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.2;
+}
+
+.subtitle {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--muted-color);
+    font-size: 1.05rem;
+}
+
+/* ==============================
+   3. Pricing layout
+================================= */
+
+.pricing-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* ==============================
+   4. Pricing cards
+================================= */
+
+.pricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgb(15 23 42 / 5%);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--brand-color);
+    box-shadow: 0 18px 36px rgb(15 23 42 / 12%);
+}
+
+.pricing-card h2 {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+}
+
+.plan-description {
+    min-height: 52px;
+    color: var(--muted-color);
+    font-size: 0.95rem;
+}
+
+/* ==============================
+   5. Highlighted plan
+================================= */
+
+.featured {
+    border: 2px solid var(--brand-color);
+    background: var(--featured-bg);
+}
+
+.popular-badge {
+    align-self: flex-start;
+    margin-bottom: 16px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: var(--brand-color);
+    color: var(--badge-text);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* ==============================
+   6. Pricing
+================================= */
+
+.price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px;
+    margin: 24px 0;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.currency {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.period {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* ==============================
+   7. Features
+================================= */
+
+.features {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 32px;
+    list-style: none;
+}
+
+.features li {
+    color: var(--muted-color);
+    font-size: 0.95rem;
+}
+
+/* ==============================
+   8. Buttons
+================================= */
+
+.plan-button {
+    display: block;
+    margin-top: auto;
+    padding: 13px 18px;
+    border: 1px solid var(--brand-color);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--brand-color);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.plan-button:hover {
+    transform: translateY(-2px);
+    background: var(--brand-color);
+    color: #ffffff;
+}
+
+.featured .plan-button {
+    background: var(--brand-color);
+    color: #ffffff;
+}
+
+.featured .plan-button:hover {
+    background: var(--brand-hover);
+    border-color: var(--brand-hover);
+}
+
+/* Keyboard accessibility */
+
+.plan-button:focus-visible {
+    outline: 3px solid var(--brand-color);
+    outline-offset: 4px;
+}
+
+/* ==============================
+   9. Footer
+================================= */
+
+.page-footer {
+    margin-top: 48px;
+    color: var(--muted-color);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.page-footer p + p {
+    margin-top: 4px;
+}
+
+/* ==============================
+   10. Responsive layout
+================================= */
+
+@media (min-width: 700px) {
+    .pricing-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .featured {
+        transform: translateY(-10px);
+    }
+
+    .featured:hover {
+        transform: translateY(-18px);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 32px 16px;
+    }
+
+    .page-header {
+        margin-bottom: 32px;
+    }
+
+    .pricing-card {
+        padding: 24px;
+    }
+}
+
+/* ==============================
+   11. Dark mode
+================================= */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --page-bg: #0f172a;
+        --card-bg: #1e293b;
+        --text-color: #f8fafc;
+        --muted-color: #cbd5e1;
+        --border-color: #334155;
+        --featured-bg: #252449;
+        --brand-color: #a78bfa;
+        --brand-hover: #8b5cf6;
+    }
+
+    .pricing-card {
+        box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+    }
+
+    .pricing-card:hover {
+        box-shadow: 0 18px 36px rgb(0 0 0 / 30%);
+    }
+
+    .plan-button:hover,
+    .featured .plan-button {
+        color: #ffffff;
+    }
+}
