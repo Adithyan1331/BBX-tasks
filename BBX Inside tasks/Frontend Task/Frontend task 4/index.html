@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Pricing Plans | CSS and Tailwind</title>
+    <link rel="stylesheet" href="./plain-css.css">
+    <style>
+        .task-intro { max-width: 68.75rem; margin: 0 auto 2rem; text-align: center; }
+        .task-intro nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1rem; }
+        .task-intro a { display: inline-block; padding: 0.7rem 1rem; border: 1px solid var(--brand-color); border-radius: 0.6rem; color: var(--brand-color); font-weight: 700; text-decoration: none; }
+        .task-intro a:hover, .task-intro a:focus-visible { background: var(--brand-color); color: #fff; }
+    </style>
+</head>
+<body>
+    <header class="task-intro">
+        <p class="eyebrow">DAY 4 · CSS FRAMEWORKS</p>
+        <h1>One pricing page.<br>Two ways to build it.</h1>
+        <p class="subtitle">Compare plain CSS with Tailwind, reproduce a missing-utility bug, and measure a reusable component refactor.</p>
+        <nav aria-label="Task deliverables">
+            <a href="./plain-css.html">Open plain CSS version</a>
+            <a href="./tailwind-cli.html">Open Tailwind version</a>
+            <a href="./resubmission.html">Read the experiments &amp; answers</a>
+        </nav>
+    </header>
+    <main class="pricing-container" aria-label="Pricing plan preview">
+        <article class="pricing-card"><h2>Plain CSS</h2><p class="plan-description">Readable semantic classes and a small stylesheet.</p><a class="plan-button" href="./plain-css.html">Explore plain CSS</a></article>
+        <article class="pricing-card featured"><span class="popular-badge">FRAMEWORK COMPARISON</span><h2>Tailwind CSS</h2><p class="plan-description">Utility-first styles, a custom theme, and a reusable component.</p><a class="plan-button" href="./tailwind-cli.html">Explore Tailwind</a></article>
+        <article class="pricing-card"><h2>Evidence &amp; answers</h2><p class="plan-description">Bug diagnosis, repeatable timing results, and written reflections.</p><a class="plan-button" href="./resubmission.html">Open task notes</a></article>
+    </main>
+</body>
+</html>
