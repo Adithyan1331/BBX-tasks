@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Pricing Plans | Tailwind CSS</title>
+    <link rel="stylesheet" href="./tailwind-components.css">
+    <script>
+        tailwind = {
+            darkMode: "media",
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: "#eff6ff", 100: "#dbeafe", 300: "#93c5fd",
+                            400: "#60a5fa", 500: "#3b82f6", 600: "#2563eb",
+                            700: "#1d4ed8", 800: "#1e40af"
+                        }
+                    },
+                    fontFamily: { lab: ["Arial", "Helvetica", "sans-serif"] },
+                    spacing: { 13: "3.25rem", 18: "4.5rem" }
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 px-4 py-18 font-lab leading-relaxed text-slate-900 transition-colors dark:bg-slate-900 dark:text-slate-50 sm:px-5">
+    <header class="mx-auto mb-8 max-w-3xl text-center sm:mb-12">
+        <p class="mb-3 text-xs font-bold tracking-[2px] text-brand-600 dark:text-brand-300">TAILWIND CSS · VERSION 02</p>
+        <h1 class="mb-4 text-3xl font-extrabold leading-tight sm:text-5xl">Choose the right plan</h1>
+        <p class="mx-auto max-w-xl text-base text-slate-500 dark:text-slate-300 sm:text-lg">Flexible plans designed to help you grow. Start small and upgrade whenever you need.</p>
+        <p class="mt-4 text-sm"><a class="font-semibold text-brand-700 underline underline-offset-4 dark:text-brand-300" href="./plain-css.html">Compare with the plain CSS version →</a></p>
+    </header>
+
+    <main class="mx-auto grid max-w-6xl grid-cols-1 items-stretch gap-7 md:grid-cols-3" aria-label="Pricing plans">
+        <article id="starter" class="pricing-component">
+            <h2>Starter</h2>
+            <p class="plan-description">For individuals getting started.</p>
+            <p class="plan-price"><small>₹</small>499 <span>/month</span></p>
+            <ul class="plan-features"><li>✓ 1 project</li><li>✓ Basic analytics</li><li>✓ Email support</li><li>✓ 5 GB storage</li></ul>
+            <a href="#starter" class="plan-action">Choose Starter</a>
+        </article>
+
+        <article id="professional" class="pricing-component pricing-component--featured md:-translate-y-2">
+            <span class="popular-badge">Most Popular</span>
+            <h2>Professional</h2>
+            <p class="plan-description">For growing teams and creators.</p>
+            <p class="plan-price"><small>₹</small>999 <span>/month</span></p>
+            <ul class="plan-features"><li>✓ 10 projects</li><li>✓ Advanced analytics</li><li>✓ Priority support</li><li>✓ 50 GB storage</li><li>✓ Custom branding</li></ul>
+            <a href="#professional" class="plan-action">Choose Professional</a>
+        </article>
+
+        <article id="business" class="pricing-component">
+            <h2>Business</h2>
+            <p class="plan-description">For businesses ready to scale.</p>
+            <p class="plan-price"><small>₹</small>1999 <span>/month</span></p>
+            <ul class="plan-features"><li>✓ Unlimited projects</li><li>✓ Full analytics</li><li>✓ Dedicated support</li><li>✓ 200 GB storage</li><li>✓ Team management</li></ul>
+            <a href="#business" class="plan-action">Choose Business</a>
+        </article>
+    </main>
+
+    <section class="mx-auto mt-14 max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800" aria-labelledby="missing-class-title">
+        <p class="text-xs font-bold tracking-[2px] text-brand-600 dark:text-brand-300">BUG REPRODUCTION · UTILITY NOT GENERATED</p>
+        <h2 id="missing-class-title" class="mt-2 text-2xl font-bold">A missing Tailwind class can fail quietly.</h2>
+        <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">The first sample has the typo <code class="rounded bg-slate-100 px-1 py-0.5 text-slate-800 dark:bg-slate-700 dark:text-slate-100">text-brand-650</code>. That shade is not defined, so Tailwind generates no rule and the text falls back to the inherited color. The second sample uses the configured <code class="rounded bg-slate-100 px-1 py-0.5 text-slate-800 dark:bg-slate-700 dark:text-slate-100">text-brand-600</code> utility.</p>
+        <div class="missing-grid mt-5">
+            <div class="missing-sample"><span class="sample-label">BEFORE · TYPO / NO MATCHING RULE</span><p class="text-brand-650">This label has no brand color.</p><code>text-brand-650</code></div>
+            <div class="missing-sample"><span class="sample-label">AFTER · VALID CONFIGURED UTILITY</span><p class="text-brand-600">This label uses the brand palette.</p><code>text-brand-600</code></div>
+        </div>
+        <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">Fix: correct the class name and confirm the shade exists in <code>tailwind.config.js</code>. CLI builds also need to scan the page in the <code>content</code> list.</p>
+    </section>
+
+    <footer class="mx-auto mt-12 max-w-6xl text-center text-sm text-slate-500 dark:text-slate-400">
+        <p>Simple plans. Powerful possibilities.</p>
+        <p class="mt-1">Tailwind utilities + reusable pricing component styles.</p>
+        <p class="mt-3 text-xs"><a class="text-brand-700 underline dark:text-brand-300" href="./resubmission.html">Open experiments and written answers</a></p>
+    </footer>
+</body>
+</html>

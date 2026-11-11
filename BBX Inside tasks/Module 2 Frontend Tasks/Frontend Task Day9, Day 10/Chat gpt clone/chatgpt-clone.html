@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#212121">
+    <title>ChatGPT</title>
+    <link rel="stylesheet" href="chatgpt-clone.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar" aria-label="Main sidebar">
+            <div class="sidebar-top">
+                <a class="brand-mark" href="#" aria-label="ChatGPT home">
+                    <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+                </a>
+
+                <nav class="primary-nav" aria-label="Main navigation">
+                    <button class="nav-item" type="button">
+                        <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+                        <span>New chat</span>
+                    </button>
+                    <button class="nav-item" type="button">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <span>Search chats</span>
+                    </button>
+                    <button class="nav-item" type="button">
+                        <i class="fa-regular fa-folder-open" aria-hidden="true"></i>
+                        <span>Library</span>
+                    </button>
+                </nav>
+
+                <section class="chat-history" aria-labelledby="history-heading">
+                    <h2 id="history-heading">Your chats</h2>
+                    <button class="history-item" type="button">Welcome to ChatGPT</button>
+                </section>
+            </div>
+
+            <div class="sidebar-bottom">
+                <a class="upgrade-link" href="#">
+                    <span class="upgrade-icon"><i class="fa-solid fa-sparkles" aria-hidden="true"></i></span>
+                    <span><strong>Upgrade plan</strong><small>Get the best of ChatGPT</small></span>
+                </a>
+                <button class="profile-button" type="button">
+                    <span class="avatar" aria-hidden="true">G</span>
+                    <span class="profile-name">Guest</span>
+                    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <button class="mobile-menu" type="button" aria-label="Open navigation">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+                <button class="model-picker" type="button">
+                    ChatGPT <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="account-actions">
+                    <button class="login-button" type="button">Log in</button>
+                    <button class="signup-button" type="button">Sign up</button>
+                </div>
+            </header>
+
+            <section class="welcome" aria-labelledby="welcome-heading">
+                <div class="welcome-content">
+                    <h1 id="welcome-heading">What can I help with?</h1>
+
+                    <form class="prompt-box" action="#" method="get">
+                        <label class="visually-hidden" for="prompt">Message ChatGPT</label>
+                        <textarea id="prompt" name="prompt" rows="1" placeholder="Ask anything"></textarea>
+                        <div class="prompt-actions">
+                            <div class="prompt-tools">
+                                <button class="tool-button add-button" type="button" aria-label="Add files and more">
+                                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                                </button>
+                                <button class="tool-button tools-button" type="button">
+                                    <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+                                    <span>Tools</span>
+                                </button>
+                            </div>
+                            <div class="prompt-tools">
+                                <button class="tool-button mic-button" type="button" aria-label="Use microphone">
+                                    <i class="fa-solid fa-microphone" aria-hidden="true"></i>
+                                </button>
+                                <button class="voice-button" type="button" aria-label="Start voice mode">
+                                    <i class="fa-solid fa-wave-square" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <nav class="suggestions" aria-label="Suggested actions">
+                        <button class="suggestion" type="button">
+                            <i class="fa-regular fa-image" aria-hidden="true"></i>
+                            <span>Create an image</span>
+                        </button>
+                        <button class="suggestion" type="button">
+                            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                            <span>Surprise me</span>
+                        </button>
+                        <button class="suggestion" type="button">
+                            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                            <span>Make a plan</span>
+                        </button>
+                        <button class="suggestion" type="button">
+                            <i class="fa-solid fa-chart-simple" aria-hidden="true"></i>
+                            <span>Analyze data</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <footer class="disclaimer">
+                    ChatGPT can make mistakes. Check important info.
+                    <a href="#">See Cookie Preferences</a>
+                </footer>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

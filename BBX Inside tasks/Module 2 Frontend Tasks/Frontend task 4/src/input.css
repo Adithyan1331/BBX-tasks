@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * CLI build:
+ * npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify
+ *
+ * The browser-ready preview uses the official Play CDN in tailwind-cli.html.
+ * Copy the theme values from tailwind.config.js into tailwind.config in that
+ * page before building if you switch it to the local CLI output.
+ */

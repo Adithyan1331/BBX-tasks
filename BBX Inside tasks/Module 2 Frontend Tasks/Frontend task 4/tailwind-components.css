@@ -1,0 +1,186 @@
+/* Reusable component classes complement Tailwind utilities used in the HTML. */
+.pricing-component {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    border: 1px solid #dbe2ea;
+    border-radius: 1.25rem;
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 0.5rem 1.5rem rgb(15 23 42 / 0.06);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.pricing-component:hover {
+    transform: translateY(-0.35rem);
+    border-color: #2563eb;
+    box-shadow: 0 1rem 2rem rgb(15 23 42 / 0.12);
+}
+
+.pricing-component h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 750;
+    letter-spacing: -0.035em;
+}
+
+.pricing-component .plan-description {
+    min-height: 3.25rem;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.pricing-component .plan-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.15rem;
+    margin: 1.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.pricing-component .plan-price small {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pricing-component .plan-price span {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.pricing-component .plan-features {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0 0 2rem;
+    color: #475569;
+    font-size: 0.9rem;
+    list-style: none;
+}
+
+.pricing-component .popular-badge {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+    border-radius: 999px;
+    background: #2563eb;
+    padding: 0.3rem 0.75rem;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02rem;
+}
+
+.pricing-component--featured {
+    border: 2px solid #2563eb;
+    background: #eff6ff;
+}
+
+.pricing-component .plan-action {
+    display: block;
+    margin-top: auto;
+    border: 1px solid #2563eb;
+    border-radius: 0.625rem;
+    padding: 0.8rem 1rem;
+    color: #1d4ed8;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.pricing-component .plan-action:hover {
+    transform: translateY(-0.125rem);
+    background: #2563eb;
+    color: #fff;
+}
+
+.pricing-component--featured .plan-action {
+    background: #2563eb;
+    color: #fff;
+}
+
+.pricing-component .plan-action:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 4px;
+}
+
+.missing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: 1rem;
+}
+
+.missing-sample {
+    display: grid;
+    gap: 0.35rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background: #f8fafc;
+}
+
+.sample-label {
+    color: #64748b;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04rem;
+}
+
+.missing-sample p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.missing-sample code {
+    color: #64748b;
+    font-size: 0.8rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .pricing-component {
+        border-color: #334155;
+        background: #1e293b;
+        color: #f8fafc;
+        box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.18);
+    }
+
+    .pricing-component--featured {
+        border-color: #818cf8;
+        background: #252449;
+    }
+
+    .pricing-component .plan-description,
+    .pricing-component .plan-price span,
+    .pricing-component .plan-features {
+        color: #cbd5e1;
+    }
+
+    .pricing-component .popular-badge {
+        background: #6366f1;
+    }
+
+    .pricing-component .plan-action {
+        border-color: #a5b4fc;
+        color: #c7d2fe;
+    }
+
+    .pricing-component--featured .plan-action {
+        border-color: #6366f1;
+        background: #6366f1;
+        color: #fff;
+    }
+
+    .missing-sample {
+        border-color: #334155;
+        background: #0f172a;
+    }
+
+    .sample-label, .missing-sample code {
+        color: #cbd5e1;
+    }
+}

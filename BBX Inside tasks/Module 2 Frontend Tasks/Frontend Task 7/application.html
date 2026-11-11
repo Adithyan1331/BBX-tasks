@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f2">
+    <meta name="description" content="Find a forecast, save destinations, and plan a trip with Daymark.">
+    <title>Daymark — weather-aware trip planning</title>
+    <link rel="preconnect" href="https://geocoding-api.open-meteo.com">
+    <link rel="preconnect" href="https://api.open-meteo.com">
+    <link rel="stylesheet" href="application.css">
+    <script src="application.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="#explore" aria-label="Daymark home">
+          <span class="brand-mark" aria-hidden="true">d</span>
+          <span>daymark</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="#explore" data-view-link="explore" aria-current="page">Explore</a>
+          <a href="#saved" data-view-link="saved">Saved places</a>
+          <a href="#planner" data-view-link="planner">Trip planner</a>
+        </nav>
+        <p class="header-note"><span class="status-dot" aria-hidden="true"></span> Forecasts, made thoughtful</p>
+      </header>
+
+      <main id="main-content">
+        <section class="view" id="explore-view" aria-labelledby="explore-title">
+          <div class="intro-grid">
+            <div class="intro-copy">
+              <p class="eyebrow"><span class="eyebrow-line"></span> A little more in tune with the weather</p>
+              <h1 id="explore-title">Go where the<br><span>day takes you.</span></h1>
+              <p class="intro-text">Find a place that feels right. Get the forecast, save your favorites, and make room for a good day out.</p>
+              <form class="search-form" id="city-search-form" role="search">
+                <label for="city-search">Where would you like to go?</label>
+                <div class="search-controls">
+                  <span class="search-icon" aria-hidden="true">⌕</span>
+                  <input id="city-search" name="city" type="search" placeholder="Try Kyoto, Lisbon, or home" autocomplete="off" required>
+                  <button class="button button-dark" type="submit">Find a place <span aria-hidden="true">→</span></button>
+                </div>
+                <p class="form-hint">Search a city anywhere in the world.</p>
+              </form>
+            </div>
+            <aside class="weather-note" aria-label="Weather note">
+              <div class="weather-note-top"><span>THE DAY, AT A GLANCE</span><span class="sun-mark" aria-hidden="true">✳</span></div>
+              <p class="weather-note-quote">“Somewhere new<br>is always a good<br>place to start.”</p>
+              <p class="weather-note-bottom">A forecast is a suggestion.<br>The adventure is yours.</p>
+              <span class="note-orbit note-orbit-one" aria-hidden="true"></span>
+              <span class="note-orbit note-orbit-two" aria-hidden="true"></span>
+            </aside>
+          </div>
+
+          <section class="results-section" aria-labelledby="results-heading">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">YOUR NEXT OPENING</p>
+                <h2 id="results-heading">Places to explore</h2>
+              </div>
+              <p class="results-caption" id="results-caption">A little inspiration for today</p>
+            </div>
+            <div id="search-status" class="status-region" aria-live="polite" aria-atomic="true"></div>
+            <div class="results-grid" id="results-list" aria-label="City forecast results"></div>
+          </section>
+        </section>
+
+        <section class="view" id="saved-view" aria-labelledby="saved-title" hidden>
+          <div class="page-heading">
+            <p class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL SHORTLIST</p>
+            <h1 id="saved-title">Places worth<br><span>coming back to.</span></h1>
+            <p class="intro-text">Keep the places on your mind in one easy-to-find spot.</p>
+          </div>
+          <section class="collection-section" aria-labelledby="saved-list-heading">
+            <div class="section-heading">
+              <div><p class="eyebrow">THE GOOD-TO-GO LIST</p><h2 id="saved-list-heading">Saved places</h2></div>
+              <span class="count-pill" id="saved-count">0 places</span>
+            </div>
+            <div class="list-tools">
+              <div class="list-search-wrap">
+                <label class="sr-only" for="saved-search">Search saved places</label>
+                <span aria-hidden="true">⌕</span>
+                <input id="saved-search" type="search" placeholder="Search your places">
+              </div>
+              <div>
+                <label class="sr-only" for="saved-filter">Filter saved places</label>
+                <select id="saved-filter">
+                  <option value="all">All places</option>
+                  <option value="warm">Warm today · 20°+</option>
+                  <option value="cool">Cool today · under 20°</option>
+                </select>
+              </div>
+            </div>
+            <p class="list-feedback" id="saved-feedback" aria-live="polite"></p>
+            <ul class="saved-list" id="saved-list"></ul>
+          </section>
+        </section>
+
+        <section class="view" id="planner-view" aria-labelledby="planner-title" hidden>
+          <div class="page-heading">
+            <p class="eyebrow"><span class="eyebrow-line"></span> MAKE A LITTLE ROOM FOR AWAY</p>
+            <h1 id="planner-title">A plan is just<br><span>a lovely beginning.</span></h1>
+            <p class="intro-text">Jot down the next place you want to make time for. Your plans stay on this device.</p>
+          </div>
+          <div class="planner-grid">
+            <section class="planner-form-panel" aria-labelledby="plan-form-title">
+              <p class="eyebrow">THE FIRST FEW DETAILS</p>
+              <h2 id="plan-form-title">Start a trip plan</h2>
+              <form id="trip-form" class="trip-form">
+                <div class="field">
+                  <label for="trip-destination">Where to?</label>
+                  <input id="trip-destination" name="destination" type="text" placeholder="A city or somewhere nearby" maxlength="80" required>
+                </div>
+                <div class="field">
+                  <label for="trip-date">When are you thinking?</label>
+                  <input id="trip-date" name="date" type="date" required>
+                </div>
+                <div class="field">
+                  <label for="trip-note">A note for later <span>(optional)</span></label>
+                  <textarea id="trip-note" name="note" rows="3" maxlength="240" placeholder="A reason, a little idea, or just because."></textarea>
+                </div>
+                <button class="button button-dark" type="submit">Save this plan <span aria-hidden="true">→</span></button>
+                <p class="form-message" id="trip-feedback" role="status" aria-live="polite"></p>
+              </form>
+            </section>
+            <section class="plans-panel" aria-labelledby="plans-heading">
+              <div class="section-heading">
+                <div><p class="eyebrow">ON THE HORIZON</p><h2 id="plans-heading">Your trip plans</h2></div>
+                <span class="count-pill" id="plan-count">0 plans</span>
+              </div>
+              <ul class="plan-list" id="plan-list"></ul>
+            </section>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a class="brand brand-footer" href="#explore"><span class="brand-mark" aria-hidden="true">d</span><span>daymark</span></a>
+        <p>Weather from Open-Meteo · No account, no API key, just a little inspiration.</p>
+        <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">About the forecast <span aria-hidden="true">↗</span></a>
+      </footer>
+    </div>
+  </body>
+</html>
